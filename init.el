@@ -17,6 +17,14 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package ivy
-  :config
-  (ivy-mode 1))
+  :init (ivy-mode 1)
+  :bind (("M-x" . counsel-M-x)
+         ("C-x g" . counsel-git)
+	 ("C-x C-f" . counsel-find-file)))
+
 (use-package magit)
+
+(use-package cmake-ide)
+
+(use-package which-key)
+
