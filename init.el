@@ -1,6 +1,10 @@
+;;; init.el -- Gerald Pipes' init file
+;;; Commentary:
+;;; Code:
+
 (package-initialize)
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(setq debug-file (expand-file-name "gud.el" user-emacs-directory))
+(defconst debug-file (expand-file-name "gud.el" user-emacs-directory))
 (load custom-file)
 (load debug-file)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -24,31 +28,24 @@
          ("C-x g" . counsel-git)
 	 ("C-x C-f" . counsel-find-file)))
 
-(use-package magit)
+(use-package magit
+  :bind
+  (("C-c C-g" . magit-status)))
 
 (use-package projectile
   :init (projectile-mode))
+(use-package counsel-projectile)
 
 (use-package clang-format)
 
 (use-package exec-path-from-shell
   :init (exec-path-from-shell-initialize))
 
-(use-package rtags)
-(use-package cmake-ide
-  :init
-  (require 'rtags)
-  (cmake-ide-setup)
-  :bind
-  (("C-." . rtags-find-symbol-at-point)
-   ("C-," . rtags-find-references-at-point)
-   ("M-<left>" . rtags-location-stack-back)
-   ("M-<right>" . rtags-location-stack-forward)))
-
 (use-package which-key)
 
-(use-package cyberpunk-theme)
-(load-theme 'cyberpunk t)
+(use-package cyberpunk-theme
+  :init
+  (load-theme 'cyberpunk t))
 
 (use-package cc-mode
   :bind
@@ -59,3 +56,37 @@
 (use-package markdown-mode)
 (use-package flymd)
 (use-package cmake-mode)
+(use-package dumb-jump
+  :init
+  (dumb-jump-mode)
+  :bind
+  (("C-<return>" . dumb-jump-go)))
+
+(global-linum-mode t)
+
+(use-package company
+  :init (global-company-mode)
+  :bind (("M-/" . 'company-complete-common-or-cycle)))
+
+(use-package flycheck
+  :init (global-flycheck-mode))
+
+;;;
+;;; RTAGS SETUP: Be sure to have run "rdm &" on a command line
+;;; if you are working on a new project you must index it by
+;;; going to the compile_commands directory and running "rc -J"
+;;; if on mac you can run "brew services start rtags" to
+;;; set it up as a launchd 
+(use-package rtags
+  :init
+  (rtags-enable-standard-keybindings)
+  :bind
+  (:map c-mode-base-map
+	("C-." . 'rtags-find-symbol-at-point)
+	("C-," . 'rtags-find-references-at-point)
+	("C-?" . 'rtags-display-summary)))
+	
+  
+
+(provide 'init)
+;;; init.el ends here
