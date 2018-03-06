@@ -72,21 +72,33 @@
   :init (global-flycheck-mode))
 
 ;;;
-;;; RTAGS SETUP: Be sure to have run "rdm &" on a command line
-;;; if you are working on a new project you must index it by
-;;; going to the compile_commands directory and running "rc -J"
-;;; if on mac you can run "brew services start rtags" to
-;;; set it up as a launchd 
+;;; RTAGS SETUP: run rtags-install the first time
+;;; you should index your projects with rc -J path
+;;; you should only have to do this once
+;;; you may have to find where rc was built
+;;; this command may be helpful "find ~/.emacs.d/ -name rc -exec {} -J ~/devcenter/carb/MacClient/build_debug/ \;"
 (use-package rtags
   :init
+  (rtags-start-process-unless-running)
   (rtags-enable-standard-keybindings)
   :bind
   (:map c-mode-base-map
 	("C-." . 'rtags-find-symbol-at-point)
 	("C-," . 'rtags-find-references-at-point)
 	("C-?" . 'rtags-display-summary)))
-	
-  
+(use-package ivy-rtags)
+(use-package company-rtags
+  :init
+  (add-to-list 'company-backends 'company-rtags))
+(use-package flycheck-rtags
+  :init
+  (defun my-flycheck-rtags-setup ()
+    (flycheck-select-checker 'rtags)
+    (setq-local flycheck-highlighting-mode nil) ;; RTags creates more accurate overlays.
+    (setq-local flycheck-check-syntax-automatically nil))
+  (add-hook 'c-mode-hook #'my-flycheck-rtags-setup)
+  (add-hook 'c++-mode-hook #'my-flycheck-rtags-setup)
+  (add-hook 'objc-mode-hook #'my-flycheck-rtags-setup))
 
 (provide 'init)
 ;;; init.el ends here
