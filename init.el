@@ -106,7 +106,7 @@
   :init
   (defun paredit-on () (paredit-mode 1))
   (add-hook 'scheme-mode-hook  'paredit-on)
-  (add-hook 'emacs-lis-mode-hook 'paredit-on))
+  (add-hook 'emacs-lisp-mode-hook 'paredit-on))
 
 (provide 'init)
 ;;; init.el ends here
