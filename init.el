@@ -30,7 +30,9 @@
 
 (use-package magit
   :bind
-  (("C-c C-g" . magit-status)))
+  (("C-c m s" . magit-status)
+   ("C-c m c" . magit-commit)
+   ("C-c m p" . magit-push-current)))
 
 (use-package projectile
   :init (projectile-mode))
@@ -103,7 +105,8 @@
 (use-package paredit
   :init
   (defun paredit-on () (paredit-mode 1))
-  (add-hook 'scheme-mode-hook  'paredit-on))
+  (add-hook 'scheme-mode-hook  'paredit-on)
+  (add-hook 'emacs-lis-mode-hook 'paredit-on))
 
 (provide 'init)
 ;;; init.el ends here
