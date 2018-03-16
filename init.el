@@ -71,15 +71,11 @@
 (use-package flycheck
   :init (global-flycheck-mode))
 
-;;;
-;;; RTAGS SETUP: run rtags-install the first time
-;;; you should index your projects with rc -J path
-;;; you should only have to do this once
-;;; you may have to find where rc was built
-;;; this command may be helpful "find ~/.emacs.d/ -name rc -exec {} -J ~/devcenter/carb/MacClient/build_debug/ \;"
+;;; brew install rtags
+;;; brew services (re)start rtags
+;;; rc -J compile_commands_for_project
 (use-package rtags
   :init
-  (rtags-start-process-unless-running)
   (rtags-enable-standard-keybindings)
   :bind
   (:map c-mode-base-map
@@ -93,12 +89,21 @@
 (use-package flycheck-rtags
   :init
   (defun my-flycheck-rtags-setup ()
-    (flycheck-select-checker 'rtags)
-    (setq-local flycheck-highlighting-mode nil) ;; RTags creates more accurate overlays.
-    (setq-local flycheck-check-syntax-automatically nil))
+    (flycheck-select-checker 'rtags))
   (add-hook 'c-mode-hook #'my-flycheck-rtags-setup)
   (add-hook 'c++-mode-hook #'my-flycheck-rtags-setup)
   (add-hook 'objc-mode-hook #'my-flycheck-rtags-setup))
+
+;; brew install racket
+(use-package geiser
+  :init
+  (unless (get-buffer "* Racket REPL *")
+    (run-racket)))
+
+(use-package paredit
+  :init
+  (defun paredit-on () (paredit-mode 1))
+  (add-hook 'scheme-mode-hook  'paredit-on))
 
 (provide 'init)
 ;;; init.el ends here

@@ -6,15 +6,14 @@
  ;; If there is more than one, they won't work right.
  '(company-idle-delay 0.0)
  '(ediff-window-setup-function (quote ediff-setup-windows-plain))
+ '(geiser-repl-use-other-window nil)
  '(global-company-mode t)
+ '(initial-buffer-choice nil)
  '(package-archives
    (quote
     (("gnu" . "http://elpa.gnu.org/packages/")
      ("melpa" . "http://melpa.org/packages/")
      ("org" . "http://orgmode.org/elpa/"))))
- '(package-selected-packages
-   (quote
-    (flycheck-rtags company-rtags ivy-rtags rtags flycheck company dumb-jump cmake-mode flymd markdown-mode cyberpunk-theme which-key exec-path-from-shell clang-format counsel-projectile projectile magit ivy ag use-package)))
  '(rtags-completing-read-behavior (quote insert-default))
  '(rtags-display-result-backend (quote ivy))
  '(use-package-always-ensure t)
