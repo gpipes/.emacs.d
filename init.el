@@ -7,6 +7,7 @@
 (defconst debug-file (expand-file-name "gud.el" user-emacs-directory))
 (load custom-file)
 (load debug-file)
+(load-theme 'tango-dark)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                Setup Packages               ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -29,7 +30,8 @@
 	 ("C-x C-f" . helm-find-files)
 	 (:map helm-map
 	       ("<tab>" . helm-execute-persistent-action)
-	       ("C-z" . helm-select-action)
+	       ("C-z" . helm-select-action))
+	 (:map helm-find-files-map
 	       ("<backspace>" . helm-find-files-up-one-level))))
 (use-package helm-projectile)
 (use-package helm-gtags
@@ -48,10 +50,6 @@
   :init (exec-path-from-shell-initialize))
 
 (use-package which-key)
-
-(use-package cyberpunk-theme
-  :init
-  (load-theme 'cyberpunk t))
 
 (use-package cc-mode
   :bind
@@ -77,28 +75,6 @@
 (use-package flycheck
   :init (global-flycheck-mode))
 
-;; ;brew install rtags
-;; ;brew services (re)start rtags
-;; ;rc -J compile_commands_for_project
-;; (use-package rtags
-;;   :init
-;;   (rtags-enable-standard-keybindings)
-;;   :bind
-;;   (:map c-mode-base-map
-;; 	("C-." . 'rtags-find-symbol-at-point)
-;; 	("C-," . 'rtags-find-references-at-point)
-;; 	("C-?" . 'rtags-display-summary)))
-;; (use-package helm-rtags)
-;; (use-package company-rtags
-;;   :init
-;;   (add-to-list 'company-backends 'company-rtags))
-;; (use-package flycheck-rtags
-;;   :init
-;;   (defun my-flycheck-rtags-setup ()
-;;     (flycheck-select-checker 'rtags))
-;;   (add-hook 'c-mode-hook #'my-flycheck-rtags-setup)
-;;   (add-hook 'c++-mode-hook #'my-flycheck-rtags-setup)
-;;   (add-hook 'objc-mode-hook #'my-flycheck-rtags-setup))
 (use-package ggtags)
 
 ;; brew install racket

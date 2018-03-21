@@ -8,8 +8,11 @@
  '(ediff-window-setup-function (quote ediff-setup-windows-plain))
  '(geiser-repl-use-other-window nil)
  '(global-company-mode t)
+ '(helm-auto-resize-mode t)
  '(helm-follow-mode-persistent t)
  '(helm-source-names-using-follow (quote ("Find tag from here")))
+ '(helm-split-window-in-side-p t)
+ '(helm-split-window-inside-p t)
  '(initial-buffer-choice nil)
  '(package-archives
    (quote
