@@ -30,12 +30,12 @@
 	 ("C-x C-f" . helm-find-files)
 	 (:map helm-map
 	       ("<tab>" . helm-execute-persistent-action)
-	       ("C-z" . helm-select-action))
-	 (:map helm-find-files-map
-	       ("<backspace>" . helm-find-files-up-one-level))))
+	       ("C-z" . helm-select-action))))
 (use-package helm-projectile)
 (use-package helm-gtags
-  :bind (("C-." . helm-gtags-dwim)))
+  :bind (("C-." . helm-gtags-dwim)
+	 ("C-," . helm-gtags-pop-stack)
+	 ("C-c g f" . ggtags-find-definition)))
 
 (use-package magit
   :bind
@@ -78,10 +78,7 @@
 (use-package ggtags)
 
 ;; brew install racket
-(use-package geiser
-  :init
-  (unless (get-buffer "* Racket REPL *")
-    (run-racket)))
+(use-package geiser)
 
 (use-package paredit
   :init
