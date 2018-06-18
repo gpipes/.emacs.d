@@ -8,6 +8,8 @@
 (load custom-file)
 (load debug-file)
 (load-theme 'tango-dark)
+(show-paren-mode)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                Setup Packages               ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -23,11 +25,16 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package cl)
 (use-package ag)
+(use-package ws-butler
+  :init (ws-butler-global-mode))
+(use-package powerline
+  :init (powerline-default-theme))
 
 (use-package helm
   :init (helm-mode 1)
   :bind (("M-x" . helm-M-x)
 	 ("C-x C-f" . helm-find-files)
+	 ("C-x b" . helm-mini)
 	 (:map helm-map
 	       ("<tab>" . helm-execute-persistent-action)
 	       ("C-z" . helm-select-action))))
@@ -66,8 +73,6 @@
   :bind
   (("C-<return>" . dumb-jump-go)))
 
-(global-linum-mode t)
-
 (use-package company
   :init (global-company-mode)
   :bind (("M-/" . 'company-complete-common-or-cycle)))
@@ -86,6 +91,11 @@
   (add-hook 'scheme-mode-hook  'paredit-on)
   (add-hook 'emacs-lisp-mode-hook 'paredit-on))
 
+(use-package pytest
+  :bind
+  (("C-c ." . pytest-one)
+   ("C-c SPC" . pytest-all)))
+
 ;;sqlite modes
 ;; brew install perl
 ;; sudo cpan RPC::EPC::Service DBI DBD::SQLite
@@ -99,6 +109,6 @@
   (put 'sqlite-handler 'operations '(insert-file-contents))
   (add-to-list 'file-name-handler-alist
 	       '("\\.sqlite\\|\\.db\\'" . sqlite-handler)))
-
+(use-package elfeed)
 (provide 'init)
-;;; init.el ends here
+;;; init.el ends hereq
