@@ -39,10 +39,13 @@
 	       ("<tab>" . helm-execute-persistent-action)
 	       ("C-z" . helm-select-action))))
 (use-package helm-projectile)
-(use-package helm-gtags
-  :bind (("C-." . helm-gtags-dwim)
-	 ("C-," . helm-gtags-pop-stack)
-	 ("C-c g f" . ggtags-find-definition)))
+
+(use-package ctags-update
+  :bind (("C-/" . ctags-update)))
+
+(use-package helm-etags-plus
+  :bind (("C-." . helm-etags-plus-select)
+	 ("C-," . helm-etags-plus-history-go-back)))
 
 (use-package magit
   :bind
@@ -79,8 +82,6 @@
 
 (use-package flycheck
   :init (global-flycheck-mode))
-
-(use-package ggtags)
 
 ;; brew install racket
 (use-package geiser)
