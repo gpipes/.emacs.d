@@ -18,7 +18,7 @@
  '(helm-auto-resize-mode t)
  '(helm-ff-file-name-history-use-recentf t)
  '(helm-follow-mode-persistent t)
- '(helm-source-names-using-follow (quote ("Etags+" "Find tag from here")))
+ '(helm-source-names-using-follow (quote ("Codesearch: Find pattern")))
  '(helm-split-window-in-side-p t)
  '(helm-split-window-inside-p t)
  '(initial-buffer-choice nil)
@@ -40,7 +40,8 @@
  '(use-package-always-ensure t)
  '(which-function-mode t)
  '(which-key-mode t)
- '(which-key-popup-type (quote side-window)))
+ '(which-key-popup-type (quote side-window))
+ '(xref-show-xrefs-function (function helm-xref-show-xrefs) t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

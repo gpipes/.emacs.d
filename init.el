@@ -42,10 +42,17 @@
 
 (use-package ctags-update
   :bind (("C-/" . ctags-update)))
+(use-package helm-xref)
 
-(use-package helm-etags-plus
-  :bind (("C-." . helm-etags-plus-select)
-	 ("C-," . helm-etags-plus-history-go-back)))
+
+;; Codesearch packages, set GOPATH and run
+;; go get github.com/google/codesearch/cmd/...
+(use-package codesearch)
+(use-package helm-codesearch
+  :bind (("C-." . helm-codesearch-find-pattern)
+	 ("C-c c /" . helm-codesearch-create-csearchindex)))
+(use-package projectile-codesearch)
+
 
 (use-package magit
   :bind
@@ -57,7 +64,18 @@
 (use-package clang-format)
 
 (use-package exec-path-from-shell
-  :init (exec-path-from-shell-initialize))
+  :init (exec-path-from-shell-initialize)
+  (when (string-equal system-type "windows-nt")
+    (setq exec-path
+	  (mapcar
+	   ;;for everything on the path convert it to
+	   ;;a windows path and take of the trailing
+	   ;;newline and backslash
+	   (lambda (path) (substring
+			   (shell-command-to-string
+			    (concat "cygpath -w " path))
+			   0 -2))
+	   exec-path))))
 
 (use-package which-key)
 
