@@ -4,9 +4,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(company-minimum-prefix-length 1)
  '(company-auto-complete (quote (quote company-explicit-action-p)))
- '(company-idle-delay 0.0)
+ '(company-idle-delay 1.0)
  '(ediff-window-setup-function (quote ediff-setup-windows-plain))
  '(elfeed-feeds (quote nil))
  '(geiser-repl-use-other-window nil)

@@ -95,7 +95,9 @@
   (("C-<return>" . dumb-jump-go)))
 
 (use-package company
-  :init (global-company-mode)
+  :init
+  (global-company-mode)
+  (delete 'company-clang company-backends)
   :bind (("M-/" . 'company-complete-common-or-cycle)))
 
 (use-package flycheck
