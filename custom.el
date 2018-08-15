@@ -24,6 +24,7 @@
  '(helm-split-window-inside-p t)
  '(initial-buffer-choice nil)
  '(magit-pull-arguments nil)
+ '(magit-git-executable "git")
  '(package-archives
    (quote
     (("gnu" . "http://elpa.gnu.org/packages/")
