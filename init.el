@@ -74,10 +74,13 @@
 	   ;;for everything on the path convert it to
 	   ;;a windows path and take of the trailing
 	   ;;newline and backslash
-	   (lambda (path) (substring
-			   (shell-command-to-string
-			    (concat "cygpath -w " path))
-			   0 -2))
+	   (lambda (path) (replace-regexp-in-string
+			   "\n"
+			   " "
+			   (substring
+			    (shell-command-to-string
+			     (concat "cygpath -w " path))
+			    0 -2)))
 	   exec-path))))
 
 (use-package which-key)
