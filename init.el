@@ -56,7 +56,7 @@
 
 (use-package magit
   :bind
-  (("C-c C-g" . magit-status)))
+  (("C-x g" . magit-status)))
 
 (use-package projectile
   :init (projectile-mode +1)
