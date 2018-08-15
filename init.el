@@ -59,7 +59,10 @@
   (("C-c C-g" . magit-status)))
 
 (use-package projectile
-  :init (projectile-mode))
+  :init (projectile-mode +1)
+  :bind
+  (:map projectile-mode-map
+	("C-c p" . projectile-command-map)))
 
 (use-package clang-format)
 
@@ -98,7 +101,7 @@
   :init
   (global-company-mode)
   (delete 'company-clang company-backends)
-  :bind (("M-/" . 'company-complete-common-or-cycle)))
+  :bind (("M-<tab>" . 'company-complete-common-or-cycle)))
 
 (use-package flycheck
   :init (global-flycheck-mode))
