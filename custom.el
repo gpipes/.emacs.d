@@ -23,8 +23,8 @@
  '(helm-split-window-in-side-p t)
  '(helm-split-window-inside-p t)
  '(initial-buffer-choice nil)
- '(magit-pull-arguments nil)
  '(magit-git-executable "git")
+ '(magit-pull-arguments nil)
  '(package-archives
    (quote
     (("gnu" . "http://elpa.gnu.org/packages/")

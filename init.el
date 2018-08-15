@@ -134,5 +134,6 @@
   (add-to-list 'file-name-handler-alist
 	       '("\\.sqlite\\|\\.db\\'" . sqlite-handler)))
 (use-package elfeed)
+(use-package csharp-mode)
 (provide 'init)
 ;;; init.el ends hereq
