@@ -9,6 +9,7 @@
 (load debug-file)
 (load-theme 'tango-dark)
 (show-paren-mode)
+(put 'narrow-to-region 'disabled nil)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                Setup Packages               ;;
@@ -56,7 +57,8 @@
 
 (use-package magit
   :bind
-  (("C-x g" . magit-status)))
+  (("C-x v d" . magit-status)
+   ("C-x v l" . magit-log-buffer-file)))
 
 (use-package projectile
   :init (projectile-mode +1)
@@ -84,13 +86,6 @@
 	   exec-path))))
 
 (use-package which-key)
-
-(use-package cc-mode
-  :bind
-  (:map c++-mode-map
-	("M-a" . c-beginning-of-defun)
-	("C-M-a" . c-beginning-of-statement)))
-
 (use-package markdown-mode)
 (use-package flymd)
 (use-package cmake-mode)
