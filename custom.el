@@ -19,7 +19,10 @@
  '(helm-auto-resize-mode t)
  '(helm-ff-file-name-history-use-recentf t)
  '(helm-follow-mode-persistent t)
- '(helm-source-names-using-follow (quote ("Codesearch: Find pattern" "Helm Xref")))
+ '(compilation-read-command nil)
+ '(helm-source-names-using-follow
+   (quote
+    ("Buffers" "RTags Helm" "Codesearch: Find pattern" "Helm Xref")))
  '(helm-split-window-in-side-p t)
  '(helm-split-window-inside-p t)
  '(initial-buffer-choice nil)
@@ -32,7 +35,7 @@
      ("org" . "http://orgmode.org/elpa/"))))
  '(path-separator ":" t)
  '(pytest-cmd-flags
-   "-svr fE --tb=short --basetemp=../automation_output --te_file test/te/my.json --te_cell 127.0.0.1 --env=dev --account=personal --junitxml=../automation_output/junitreports/pyTestResults.xml --instafail --log_level=debug")
+   "-svr fE --tb=short --basetemp=../automation_output --te_file test/te/my.json --te_cell 127.0.0.1 --env=dev --account=pro --junitxml=../automation_output/junitreports/pyTestResults.xml --instafail --log_level=debug")
  '(pytest-project-root-test
    (lambda
      (dirname)

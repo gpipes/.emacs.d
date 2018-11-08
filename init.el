@@ -10,6 +10,11 @@
 (load-theme 'tango-dark)
 (show-paren-mode)
 (put 'narrow-to-region 'disabled nil)
+(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+(add-to-list 'auto-mode-alist '("\\.m\\'" . c++-mode))
+(add-to-list 'auto-mode-alist '("\\.mm\\'" . c++-mode))
+(global-set-key (kbd "M-<left>") 'xref-pop-marker-stack)
+(global-set-key (kbd "<f5>") 'projectile-compile-project)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                Setup Packages               ;;
@@ -31,29 +36,28 @@
 (use-package powerline
   :init (powerline-default-theme))
 
-(use-package helm
-  :init (helm-mode 1)
-  :bind (("M-x" . helm-M-x)
-	 ("C-x C-f" . helm-find-files)
-	 ("C-x b" . helm-mini)
-	 (:map helm-map
-	       ("<tab>" . helm-execute-persistent-action)
-	       ("C-z" . helm-select-action))))
-(use-package helm-projectile)
-
 (use-package ctags-update
   :bind (("C-/" . ctags-update)))
-(use-package helm-xref)
-
 
 ;; Codesearch packages, set GOPATH and run
 ;; go get github.com/google/codesearch/cmd/...
 (use-package codesearch)
-(use-package helm-codesearch
-  :bind (("C-." . helm-codesearch-find-pattern)
-	 ("C-c c /" . helm-codesearch-create-csearchindex)))
-(use-package projectile-codesearch)
 
+;; brew install rtags
+;; brew services start rtags
+;; rc -J <compile database>
+(use-package rtags
+  :init
+  (setq rtags-display-result-backend 'helm)
+  (setq rtags-autostart-diagnostics t)
+  (setq rtags-completions-enabled t)
+  (push 'company-rtags company-backends)
+  (rtags-enable-standard-keybindings)
+  :bind (:map c++-mode-map
+	      ("C-." . rtags-find-symbol-at-point)
+	      ("C-," . rtags-find-references-at-point)
+	      ("C-<left>" . rtags-location-stack-back)
+	      ("C-<right>" . rtags-location-stack-forward)))
 
 (use-package magit
   :bind
@@ -133,5 +137,18 @@
 	       '("\\.sqlite\\|\\.db\\'" . sqlite-handler)))
 (use-package elfeed)
 (use-package csharp-mode)
+
+(use-package helm
+  :init (helm-mode 1)
+  :bind (("M-x" . helm-M-x)
+	 ("C-x C-f" . helm-find-files)
+	 ("C-x b" . helm-mini)
+	 (:map helm-map
+	       ("<tab>" . helm-execute-persistent-action)
+	       ("C-z" . helm-select-action))))
+(use-package helm-projectile)
+(use-package helm-rtags)
+(use-package helm-xref)
+
 (provide 'init)
 ;;; init.el ends hereq
