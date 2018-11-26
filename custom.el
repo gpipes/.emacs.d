@@ -6,6 +6,7 @@
  ;; If there is more than one, they won't work right.
  '(company-auto-complete (quote (quote company-explicit-action-p)))
  '(company-idle-delay 1.0)
+ '(compilation-read-command nil)
  '(ediff-window-setup-function (quote ediff-setup-windows-plain))
  '(elfeed-feeds (quote nil))
  '(geiser-repl-use-other-window nil)
@@ -19,7 +20,6 @@
  '(helm-auto-resize-mode t)
  '(helm-ff-file-name-history-use-recentf t)
  '(helm-follow-mode-persistent t)
- '(compilation-read-command nil)
  '(helm-source-names-using-follow
    (quote
     ("Buffers" "RTags Helm" "Codesearch: Find pattern" "Helm Xref")))
