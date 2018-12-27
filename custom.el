@@ -33,6 +33,9 @@
     (("gnu" . "http://elpa.gnu.org/packages/")
      ("melpa" . "http://melpa.org/packages/")
      ("org" . "http://orgmode.org/elpa/"))))
+ '(package-selected-packages
+   (quote
+    (helm-rtags rtags ws-butler which-key use-package pytest projectile-codesearch powerline paredit markdown-mode magit helm-xref helm-projectile helm-codesearch geiser flymd flycheck exec-path-from-shell elfeed edbi-sqlite dumb-jump ctags-update csharp-mode company cmake-mode clang-format ag)))
  '(path-separator ":" t)
  '(pytest-cmd-flags
    "-svr fE --tb=short --basetemp=../automation_output --te_file test/te/my.json --te_cell 127.0.0.1 --env=dev --account=pro --junitxml=../automation_output/junitreports/pyTestResults.xml --instafail --log_level=debug")

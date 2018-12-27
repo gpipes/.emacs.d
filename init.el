@@ -15,6 +15,7 @@
 (add-to-list 'auto-mode-alist '("\\.mm\\'" . c++-mode))
 (global-set-key (kbd "M-<left>") 'xref-pop-marker-stack)
 (global-set-key (kbd "<f5>") 'projectile-compile-project)
+(put 'upcase-region 'disabled nil)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                Setup Packages               ;;
@@ -133,10 +134,25 @@
       (kill-buffer nil)
       (edbi-sqlite sql-database)))
   (put 'sqlite-handler 'operations '(insert-file-contents))
+
   (add-to-list 'file-name-handler-alist
 	       '("\\.sqlite\\|\\.db\\'" . sqlite-handler)))
 (use-package elfeed)
 (use-package csharp-mode)
+
+;; select files in dired mode, add |\\.*\\' to add file types you want to
+;; open in the alist below.
+(defun open/start-file-handler (operation &rest args)
+  "Open file using OS command ignoring OPERATION and using path from ARGS."
+  (let ((file (car args))
+	(open-cmd (if (string-equal system-type "windows-nt")
+		      "start "
+		    "open ")))
+    (kill-buffer nil)
+    (shell-command (concat open-cmd file))))
+(put 'open/start-file-handler 'operations '(insert-file-contents))
+(add-to-list 'file-name-handler-alist
+	     '("\\.sln\\'" . open/start-file-handler))
 
 (use-package helm
   :init (helm-mode 1)
@@ -151,4 +167,4 @@
 (use-package helm-xref)
 
 (provide 'init)
-;;; init.el ends hereq
+;;; init.el ends here
