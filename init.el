@@ -110,7 +110,9 @@
   :init (global-flycheck-mode))
 
 ;; brew install racket
-(use-package geiser)
+(use-package geiser
+  :init
+  (require 'geiser-racket))
 
 (use-package paredit
   :init
