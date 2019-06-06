@@ -168,5 +168,8 @@
 (use-package helm-rtags)
 (use-package helm-xref)
 
+(when (string-equal system-type "windows-nt")
+  (setenv "PS1" "\\H:\\W \\u$ "))
+
 (provide 'init)
 ;;; init.el ends here
