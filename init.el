@@ -171,5 +171,8 @@
 (when (string-equal system-type "windows-nt")
   (setenv "PS1" "\\H:\\W \\u$ "))
 
+(add-to-list 'auto-mode-alist
+	     '("\\.sj\\'" . javascript-mode))
+
 (provide 'init)
 ;;; init.el ends here
