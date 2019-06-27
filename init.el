@@ -86,7 +86,7 @@
 			   " "
 			   (substring
 			    (shell-command-to-string
-			     (concat "cygpath -w " path))
+			     (concat "cygpath -w \"" path "\""))
 			    0 -2)))
 	   exec-path))))
 
