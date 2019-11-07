@@ -25,6 +25,7 @@
  '(helm-split-window-in-side-p t)
  '(helm-split-window-inside-p t)
  '(initial-buffer-choice nil)
+ '(indent-tabs-mode nil)
  '(magit-git-executable "git")
  '(magit-pull-arguments nil)
  '(package-archives
