@@ -125,20 +125,6 @@
   (("C-c ." . pytest-one)
    ("C-c SPC" . pytest-all)))
 
-;;sqlite modes
-;; brew install perl
-;; sudo cpan RPC::EPC::Service DBI DBD::SQLite
-(use-package edbi-sqlite
-  :init
-  (defun sqlite-handler (operation &rest args)
-    "An open hook that will invoke ebdi when opening sqlite files."
-    (let ((sql-database (car args)))
-      (kill-buffer nil)
-      (edbi-sqlite sql-database)))
-  (put 'sqlite-handler 'operations '(insert-file-contents))
-
-  (add-to-list 'file-name-handler-alist
-	       '("\\.sqlite\\|\\.db\\'" . sqlite-handler)))
 (use-package elfeed)
 (use-package csharp-mode)
 
