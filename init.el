@@ -7,7 +7,7 @@
 (defconst debug-file (expand-file-name "gud.el" user-emacs-directory))
 (load custom-file)
 (load debug-file)
-(load-theme 'tango-dark)
+;; (load-theme 'tango-dark)
 (show-paren-mode)
 (put 'narrow-to-region 'disabled nil)
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
@@ -153,6 +153,8 @@
 (use-package helm-projectile)
 (use-package helm-rtags)
 (use-package helm-xref)
+
+(use-package powershell)
 
 (when (string-equal system-type "windows-nt")
   (setenv "PS1" "\\H:\\W \\u$ "))
