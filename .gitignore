@@ -3,3 +3,8 @@ elpa/
 eshell/
 projectile-bookmarks.eld
 recentf*
+\#*\#
+*\#*
+transient/
+*.cache
+

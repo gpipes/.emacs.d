@@ -7,7 +7,7 @@
 (defconst debug-file (expand-file-name "gud.el" user-emacs-directory))
 (load custom-file)
 (load debug-file)
-;; (load-theme 'tango-dark)
+(load-theme 'tango-dark)
 (show-paren-mode)
 (put 'narrow-to-region 'disabled nil)
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
@@ -74,21 +74,8 @@
 (use-package clang-format)
 
 (use-package exec-path-from-shell
-  :init (exec-path-from-shell-initialize)
-  (when (string-equal system-type "windows-nt")
-    (setq exec-path
-	  (mapcar
-	   ;;for everything on the path convert it to
-	   ;;a windows path and take of the trailing
-	   ;;newline and backslash
-	   (lambda (path) (replace-regexp-in-string
-			   "\n"
-			   " "
-			   (substring
-			    (shell-command-to-string
-			     (concat "cygpath -w \"" path "\""))
-			    0 -2)))
-	   exec-path))))
+  :init (unless (string-equal system-type "windows-nt")
+          (exec-path-from-shell-initialize)))
 
 (use-package which-key)
 (use-package markdown-mode)
@@ -127,20 +114,14 @@
 
 (use-package elfeed)
 (use-package csharp-mode)
-
-;; select files in dired mode, add |\\.*\\' to add file types you want to
-;; open in the alist below.
-(defun open/start-file-handler (operation &rest args)
-  "Open file using OS command ignoring OPERATION and using path from ARGS."
-  (let ((file (car args))
-	(open-cmd (if (string-equal system-type "windows-nt")
-		      "start "
-		    "open ")))
-    (kill-buffer nil)
-    (shell-command (concat open-cmd file))))
-(put 'open/start-file-handler 'operations '(insert-file-contents))
-(add-to-list 'file-name-handler-alist
-	     '("\\.sln\\'" . open/start-file-handler))
+(use-package flycheck-rust)
+(use-package rust-mode
+  :init
+  (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
+(use-package racer
+  :init
+  (add-hook 'rust-mode-hook #'racer-mode)
+  (add-hook 'racer-mode-hook #'company-mode))
 
 (use-package helm
   :init (helm-mode 1)
@@ -150,17 +131,22 @@
 	 (:map helm-map
 	       ("<tab>" . helm-execute-persistent-action)
 	       ("C-z" . helm-select-action))))
+
 (use-package helm-projectile)
 (use-package helm-rtags)
 (use-package helm-xref)
 
 (use-package powershell)
+(use-package groovy-mode)
 
 (when (string-equal system-type "windows-nt")
   (setenv "PS1" "\\H:\\W \\u$ "))
 
 (add-to-list 'auto-mode-alist
 	     '("\\.sj\\'" . javascript-mode))
+
+(add-to-list 'auto-mode-alist
+             '("Jenkinsfile\\'" . groovy-mode))
 
 (provide 'init)
 ;;; init.el ends here
