@@ -123,6 +123,8 @@
   (add-hook 'rust-mode-hook #'racer-mode)
   (add-hook 'racer-mode-hook #'company-mode))
 
+(use-package racket-mode)
+
 (use-package helm
   :init (helm-mode 1)
   :bind (("M-x" . helm-M-x)
