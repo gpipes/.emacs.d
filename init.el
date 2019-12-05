@@ -96,11 +96,6 @@
 (use-package flycheck
   :init (global-flycheck-mode))
 
-;; brew install racket
-(use-package geiser
-  :init
-  (require 'geiser-racket))
-
 (use-package paredit
   :init
   (defun paredit-on () (paredit-mode 1))

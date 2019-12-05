@@ -7,7 +7,7 @@
  '(company-auto-complete (quote (quote company-explicit-action-p)))
  '(company-idle-delay 1.0)
  '(ediff-window-setup-function (quote ediff-setup-windows-plain))
- '(elfeed-feeds (quote nil))
+ '(elfeed-feeds (quote ("https://www.gamespot.com/feeds/game-news/")))
  '(geiser-repl-use-other-window nil)
  '(global-company-mode t)
  '(grep-command "grep  -nHI")
