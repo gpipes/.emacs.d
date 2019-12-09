@@ -4,9 +4,11 @@
 
 (package-initialize)
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(defconst debug-file (expand-file-name "gud.el" user-emacs-directory))
+(defconst debug-file (expand-file-name "gud" user-emacs-directory))
+(defconst win-debug-file (expand-file-name "cdb-gud" user-emacs-directory))
 (load custom-file)
 (load debug-file)
+(load win-debug-file)
 (load-theme 'tango-dark)
 (show-paren-mode)
 (put 'narrow-to-region 'disabled nil)
@@ -135,9 +137,12 @@
 
 (use-package powershell)
 (use-package groovy-mode)
-
-(when (string-equal system-type "windows-nt")
-  (setenv "PS1" "\\H:\\W \\u$ "))
+(use-package org-jira)
+(use-package ggtags
+  :init
+  (add-hook 'c-mode-common-hook (lambda ()
+                                  (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
+                                    (ggtags-mode 1)))))
 
 (add-to-list 'auto-mode-alist
 	     '("\\.sj\\'" . javascript-mode))

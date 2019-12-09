@@ -10,3 +10,6 @@ transient/
 *.data
 url/
 server/
+emms/
+request/
+*~
