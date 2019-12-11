@@ -36,11 +36,6 @@
 (use-package ag)
 (use-package ws-butler
   :init (ws-butler-global-mode))
-(use-package powerline
-  :init (powerline-default-theme))
-
-(use-package ctags-update
-  :bind (("C-/" . ctags-update)))
 
 ;; Codesearch packages, set GOPATH and run
 ;; go get github.com/google/codesearch/cmd/...
@@ -140,9 +135,13 @@
 (use-package org-jira)
 (use-package ggtags
   :init
-  (add-hook 'c-mode-common-hook (lambda ()
-                                  (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
-                                    (ggtags-mode 1)))))
+  (add-hook 'c-mode-common-hook
+            (lambda ()
+              (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
+                (ggtags-mode 1))))
+  :bind
+  (("M->" . 'end-of-buffer)
+   ("M-<" . 'beginning-of-buffer)))
 
 (add-to-list 'auto-mode-alist
 	     '("\\.sj\\'" . javascript-mode))
