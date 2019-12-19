@@ -53,7 +53,27 @@
  '(rust-format-on-save t)
  '(safe-local-variable-values
    (quote
-    ((pytest-project-root-test lambda
+    ((eval setq jedi:server-args
+           (if
+               (fboundp
+                (quote projectile-project-root))
+               (list "--sys-path"
+                     (concat
+                      (projectile-project-root)
+                      "automation")
+                     "--sys-path"
+                     (concat
+                      (projectile-project-root)
+                      "automation/tools/framework_installer/automation_framework")
+                     "--sys-path"
+                     (concat
+                      (projectile-project-root)
+                      "automation/tools/framework_installer/report_util")
+                     "--sys-path"
+                     (concat
+                      (projectile-project-root)
+                      "automation/tools/framework_installer/suite_util"))))
+     (pytest-project-root-test lambda
                                (dirname)
                                (string-suffix-p "automation/" dirname t))
      (pytest-cmd-flags . "-svr fE --tb=short --basetemp=../automation_output --te_file test/te/te1.json --te_cell 127.0.0.1 --env=dev --account=personal --junitxml=../automation_output/junitreports/pyTestResults.xml --instafail --log_level=debug")

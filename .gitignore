@@ -13,3 +13,6 @@ server/
 emms/
 request/
 *~
+GPATH
+GRTAGS
+GTAGS

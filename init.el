@@ -137,8 +137,11 @@
   :init
   (add-hook 'c-mode-common-hook
             (lambda ()
-              (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
+              (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'python-mode)
                 (ggtags-mode 1))))
+  (setenv "GTAGSLABEL" "pygments")
+  (unless (string-equal system-type "windows-nt")
+    (setenv "GTAGSCONF" "/usr/local/share/gtags/gtags.conf"))
   :bind
   (("M->" . 'end-of-buffer)
    ("M-<" . 'beginning-of-buffer)))
