@@ -109,7 +109,7 @@
 (use-package helm-projectile)
 (use-package helm-rtags)
 (use-package helm-xref)
-
+(use-package ssh)
 (use-package powershell)
 (use-package groovy-mode)
 (use-package org-jira)
