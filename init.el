@@ -116,9 +116,11 @@
 (use-package ggtags
   :init
   (defun ggtags-on () (ggtags-mode 1))
-  (add-hook 'c-mode-common-hook 'ggtags-on)
-  (add-hook 'racket-mode-hook 'ggtags-on)
-  (add-hook 'pytest-mode-hook 'ggtags-on)
+  (mapc (lambda (mode-name) (add-hook mode-name 'ggtags-on))
+        '(c-mode-common-hook racket-mode-hook python-mode-hook
+                             lisp-mode-hook scheme-mode-hook
+                             java-mode-hook emacs-lisp-mode-hook
+                             javascript-mode-hook))
   (setenv "GTAGSLABEL" "pygments")
   (if (not (string-equal system-type "windows-nt"))
       (setenv "GTAGSCONF" "/usr/local/share/gtags/gtags.conf")
@@ -126,7 +128,7 @@
   :bind
   (("C-M-." . ggtags-find-tag-regexp)
    (:map ggtags-mode-map
-         ("C-M-return" . ggtags-create-tags)
+         ("C-M-<return>" . ggtags-create-tags)
          ("M->" . end-of-buffer)
          ("M-<" . beginning-of-buffer))))
 
