@@ -37,26 +37,6 @@
 (use-package ws-butler
   :init (ws-butler-global-mode))
 
-;; Codesearch packages, set GOPATH and run
-;; go get github.com/google/codesearch/cmd/...
-(use-package codesearch)
-
-;; brew install rtags
-;; brew services start rtags
-;; rc -J <compile database>
-(use-package rtags
-  :init
-  (setq rtags-display-result-backend 'helm)
-  (setq rtags-autostart-diagnostics t)
-  (setq rtags-completions-enabled t)
-  (push 'company-rtags company-backends)
-  (rtags-enable-standard-keybindings)
-  :bind (:map c++-mode-map
-	      ("C-." . rtags-find-symbol-at-point)
-	      ("C-," . rtags-find-references-at-point)
-	      ("C-<left>" . rtags-location-stack-back)
-	      ("C-<right>" . rtags-location-stack-forward)))
-
 (use-package magit
   :bind
   (("C-x v d" . magit-status)
@@ -137,14 +117,17 @@
   :init
   (add-hook 'c-mode-common-hook
             (lambda ()
-              (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'python-mode)
+              (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'python-mode 'racket-mode)
                 (ggtags-mode 1))))
   (setenv "GTAGSLABEL" "pygments")
-  (unless (string-equal system-type "windows-nt")
-    (setenv "GTAGSCONF" "/usr/local/share/gtags/gtags.conf"))
+  (if (not (string-equal system-type "windows-nt"))
+      (setenv "GTAGSCONF" "/usr/local/share/gtags/gtags.conf")
+    (setenv "GTAGSCONF" (concat (getenv "HOMEDRIVE") "/global/share/gtags/gtags.conf")))
   :bind
-  (("M->" . 'end-of-buffer)
-   ("M-<" . 'beginning-of-buffer)))
+  (("C-M-." . ggtags-find-tag-regexp)
+   (:map ggtags-mode-map
+         ("M->" . 'end-of-buffer)
+         ("M-<" . 'beginning-of-buffer))))
 
 (add-to-list 'auto-mode-alist
 	     '("\\.sj\\'" . javascript-mode))
