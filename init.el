@@ -77,7 +77,8 @@
   :init
   (defun paredit-on () (paredit-mode 1))
   (add-hook 'scheme-mode-hook  'paredit-on)
-  (add-hook 'emacs-lisp-mode-hook 'paredit-on))
+  (add-hook 'emacs-lisp-mode-hook 'paredit-on)
+  (add-hook 'racket-mode-hook 'paredit-on))
 
 (use-package pytest
   :bind
