@@ -40,7 +40,7 @@
      ("org" . "http://orgmode.org/elpa/"))))
  '(package-selected-packages
    (quote
-    (ggtags org-jira racket-mode flycheck-rust racer rust-mode groovy-mode powershell helm-xref helm-rtags helm-projectile helm csharp-mode elfeed pytest paredit geiser flycheck company dumb-jump cmake-mode flymd markdown-mode which-key exec-path-from-shell clang-format projectile magit rtags codesearch ctags-update powerline ws-butler ag use-package)))
+    (ssh ggtags org-jira racket-mode flycheck-rust racer rust-mode groovy-mode powershell helm-xref helm-rtags helm-projectile helm csharp-mode elfeed pytest paredit geiser flycheck company dumb-jump cmake-mode flymd markdown-mode which-key exec-path-from-shell clang-format projectile magit rtags codesearch ctags-update powerline ws-butler ag use-package)))
  '(path-separator ":" t)
  '(pytest-cmd-flags
    "-svr fE --tb=short --basetemp=../automation_output --te_file test/te/my.json --te_cell 127.0.0.1 --env=dev --account=pro --junitxml=../automation_output/junitreports/pyTestResults.xml --instafail --log_level=debug")
