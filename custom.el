@@ -8,17 +8,9 @@
  '(company-auto-complete (quote (quote company-explicit-action-p)))
  '(company-idle-delay 1.0)
  '(ediff-window-setup-function (quote ediff-setup-windows-plain))
- '(elfeed-feeds
-   (quote
-    ("https://www.reddit.com/r/NintendoSwitch.rss" "https://www.gamespot.com/feeds/game-news/")))
+ '(elfeed-feeds (quote ("https://www.gamespot.com/feeds/game-news/")))
  '(geiser-repl-use-other-window nil)
  '(global-company-mode t)
- '(grep-command "grep  -nHI")
- '(grep-find-command (quote ("find . -type f -exec grep  -nHI  {} \\;" . 32)))
- '(grep-find-template "find <D> <X> -type f <F> -exec grep <C> -nHI <R> {} \\;")
- '(grep-highlight-matches (quote always))
- '(grep-template "grep <X> <C> -nHI <R> <F>")
- '(grep-use-null-device nil)
  '(helm-auto-resize-mode t)
  '(helm-completion-style (quote emacs))
  '(helm-ff-file-name-history-use-recentf t)
@@ -33,6 +25,7 @@
  '(jiralib-url "https://jira.carboniteinc.com")
  '(magit-git-executable "git")
  '(magit-pull-arguments nil)
+ '(mode-line-modes nil t)
  '(package-archives
    (quote
     (("gnu" . "http://elpa.gnu.org/packages/")
