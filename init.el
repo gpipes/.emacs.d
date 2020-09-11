@@ -108,7 +108,6 @@
 	       ("C-z" . helm-select-action))))
 
 (use-package helm-projectile)
-(use-package helm-rtags)
 (use-package helm-xref)
 (use-package ssh)
 (use-package powershell)
