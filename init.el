@@ -32,7 +32,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;               Require Packages              ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package cl)
 (use-package ag)
 (use-package ws-butler
   :init (ws-butler-global-mode))
