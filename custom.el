@@ -4,20 +4,20 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(byte-compile-warnings (quote nil))
+ '(byte-compile-warnings 'nil)
  '(c-default-style "stroustrup")
- '(company-auto-commit (quote (quote company-explicit-action-p)))
+ '(company-auto-commit ''company-explicit-action-p)
  '(company-idle-delay 1.0)
- '(ediff-window-setup-function (quote ediff-setup-windows-plain))
- '(elfeed-feeds (quote ("https://www.gamespot.com/feeds/game-news/")))
- '(flycheck-check-syntax-automatically (quote (save mode-enable)))
+ '(ediff-window-setup-function 'ediff-setup-windows-plain)
+ '(elfeed-feeds '("https://www.gamespot.com/feeds/game-news/"))
+ '(flycheck-check-syntax-automatically '(save mode-enable))
  '(geiser-repl-use-other-window nil)
  '(global-company-mode t)
  '(helm-auto-resize-mode t)
- '(helm-completion-style (quote emacs))
+ '(helm-completion-style 'emacs)
  '(helm-ff-file-name-history-use-recentf t)
  '(helm-follow-mode-persistent t)
- '(helm-source-names-using-follow (quote ("Buffers" "Helm Xref")))
+ '(helm-source-names-using-follow '("Buffers" "Helm Xref"))
  '(helm-split-window-in-side-p t)
  '(helm-split-window-inside-p t)
  '(indent-tabs-mode nil)
@@ -26,15 +26,15 @@
  '(magit-git-executable "git")
  '(magit-pull-arguments nil)
  '(mode-line-modes nil t)
- '(org-agenda-files (quote ("d:/devcenter/Gengine/TODO.org")))
+ '(ns-command-modifier 'control)
+ '(ns-control-modifier 'command)
+ '(org-agenda-files '("d:/devcenter/Gengine/TODO.org"))
  '(package-archives
-   (quote
-    (("gnu" . "http://elpa.gnu.org/packages/")
+   '(("gnu" . "http://elpa.gnu.org/packages/")
      ("melpa" . "http://melpa.org/packages/")
-     ("org" . "http://orgmode.org/elpa/"))))
+     ("org" . "http://orgmode.org/elpa/")))
  '(package-selected-packages
-   (quote
-    (helm rust-mode flycheck projectile cmake-ide ws-butler which-key use-package ssh racket-mode racer pytest powershell paredit org-jira markdown-mode magit helm-xref helm-rtags helm-projectile groovy-mode ggtags flymd flycheck-rust exec-path-from-shell elfeed dumb-jump csharp-mode company cmake-mode clang-format ag)))
+   '(realgud-lldb realgud helm rust-mode flycheck projectile cmake-ide ws-butler which-key use-package ssh racket-mode racer pytest powershell paredit org-jira markdown-mode magit helm-xref helm-rtags helm-projectile groovy-mode ggtags flymd flycheck-rust exec-path-from-shell elfeed dumb-jump csharp-mode company cmake-mode clang-format ag))
  '(path-separator ":" t)
  '(pytest-cmd-flags
    "-svr fE --tb=short --basetemp=../automation_output --te_file test/te/my.json --te_cell 127.0.0.1 --env=dev --account=pro --junitxml=../automation_output/junitreports/pyTestResults.xml --instafail --log_level=debug")
@@ -42,17 +42,18 @@
    (lambda
      (dirname)
      (string-suffix-p "automation/" dirname t)))
+ '(realgud-safe-mode nil)
  '(rust-format-on-save t)
  '(show-paren-mode t)
  '(truncate-lines t)
  '(use-package-always-ensure t)
  '(which-function-mode t)
  '(which-key-mode t)
- '(which-key-popup-type (quote side-window))
- '(xref-show-xrefs-function (function helm-xref-show-xrefs) t))
+ '(which-key-popup-type 'side-window)
+ '(xref-show-xrefs-function #'helm-xref-show-xrefs))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Courier New" :foundry "outline" :slant normal :weight normal :height 120 :width normal)))))
+ '(default ((t (:inherit nil :extend t :stipple nil :background "#2e3436" :foreground "#eeeeec" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight semi-bold :height 180 :width normal :foundry "nil" :family "Inconsolata")))))

@@ -4,10 +4,8 @@
 
 (package-initialize)
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(defconst debug-file (expand-file-name "gud" user-emacs-directory))
 (defconst win-debug-file (expand-file-name "cdb-gud" user-emacs-directory))
 (load custom-file)
-(load debug-file)
 (load win-debug-file)
 (load-theme 'tango-dark)
 (show-paren-mode)
@@ -112,6 +110,10 @@
 (use-package powershell)
 (use-package groovy-mode)
 (use-package org-jira)
+
+(use-package realgud)
+(use-package realgud-lldb)
+
 (use-package ggtags
   :init
   (defun ggtags-on () (ggtags-mode 1))
