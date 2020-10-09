@@ -1,4 +1,3 @@
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -6,6 +5,8 @@
  ;; If there is more than one, they won't work right.
  '(byte-compile-warnings 'nil)
  '(c-default-style "stroustrup")
+ '(tool-bar-mode 'nil)
+ '(menu-bar-mode 'nil)
  '(company-auto-commit ''company-explicit-action-p)
  '(company-idle-delay 1.0)
  '(ediff-window-setup-function 'ediff-setup-windows-plain)
