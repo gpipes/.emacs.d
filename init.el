@@ -45,7 +45,12 @@
   (:map projectile-mode-map
 	("C-c p" . projectile-command-map)))
 
-(use-package clang-format)
+(use-package clang-format
+  :init
+  (add-hook 'c-mode-common-hook
+          (function (lambda ()
+                    (add-hook 'before-save-hook
+                              'clang-format-buffer)))))
 
 (use-package exec-path-from-shell
   :init (unless (string-equal system-type "windows-nt")

@@ -5,8 +5,8 @@
  ;; If there is more than one, they won't work right.
  '(byte-compile-warnings 'nil)
  '(c-default-style "stroustrup")
- '(tool-bar-mode 'nil)
- '(menu-bar-mode 'nil)
+ '(c-basic-offset 2)
+ '(tab-width 2)
  '(company-auto-commit ''company-explicit-action-p)
  '(company-idle-delay 1.0)
  '(ediff-window-setup-function 'ediff-setup-windows-plain)
@@ -26,6 +26,7 @@
  '(jiralib-url "https://jira.carboniteinc.com")
  '(magit-git-executable "git")
  '(magit-pull-arguments nil)
+ '(menu-bar-mode 'nil)
  '(mode-line-modes nil t)
  '(ns-command-modifier 'control)
  '(ns-control-modifier 'command)
@@ -34,8 +35,6 @@
    '(("gnu" . "http://elpa.gnu.org/packages/")
      ("melpa" . "http://melpa.org/packages/")
      ("org" . "http://orgmode.org/elpa/")))
- '(package-selected-packages
-   '(realgud-lldb realgud helm rust-mode flycheck projectile cmake-ide ws-butler which-key use-package ssh racket-mode racer pytest powershell paredit org-jira markdown-mode magit helm-xref helm-rtags helm-projectile groovy-mode ggtags flymd flycheck-rust exec-path-from-shell elfeed dumb-jump csharp-mode company cmake-mode clang-format ag))
  '(path-separator ":" t)
  '(pytest-cmd-flags
    "-svr fE --tb=short --basetemp=../automation_output --te_file test/te/my.json --te_cell 127.0.0.1 --env=dev --account=pro --junitxml=../automation_output/junitreports/pyTestResults.xml --instafail --log_level=debug")
@@ -46,6 +45,7 @@
  '(realgud-safe-mode nil)
  '(rust-format-on-save t)
  '(show-paren-mode t)
+ '(tool-bar-mode 'nil)
  '(truncate-lines t)
  '(use-package-always-ensure t)
  '(which-function-mode t)
