@@ -7,7 +7,7 @@
 (defconst win-debug-file (expand-file-name "cdb-gud" user-emacs-directory))
 (load custom-file)
 (load win-debug-file)
-(load-theme 'wheatgrass)
+(load-theme 'whiteboard)
 (show-paren-mode)
 (put 'narrow-to-region 'disabled nil)
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
