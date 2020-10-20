@@ -7,15 +7,13 @@
 (defconst win-debug-file (expand-file-name "cdb-gud" user-emacs-directory))
 (load custom-file)
 (load win-debug-file)
-(load-theme 'wheatgrass)
-(show-paren-mode)
-(put 'narrow-to-region 'disabled nil)
-(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
-(add-to-list 'auto-mode-alist '("\\.m\\'" . c++-mode))
-(add-to-list 'auto-mode-alist '("\\.mm\\'" . c++-mode))
-(global-set-key (kbd "M-<left>") 'xref-pop-marker-stack)
-(global-set-key (kbd "<f5>") 'projectile-compile-project)
-(put 'upcase-region 'disabled nil)
+(load-theme 'whiteboard)
+
+;; load local.el which sets local-el-files-list to load
+;; ex: (setq local-el-files-list '("path1" "path2"))
+(defvar local-el-files-list '())
+(load (expand-file-name "local.el" user-emacs-directory) t t)
+(mapc (lambda (file) (load file)) local-el-files-list)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                Setup Packages               ;;
@@ -111,7 +109,11 @@
 (use-package groovy-mode)
 (use-package org-jira)
 
-(use-package realgud)
+(use-package realgud
+  :bind
+  (:map realgud:shortkey-mode-map
+        ("n" . realgud:cmd-next-no-arg)))
+
 (use-package realgud-lldb)
 
 (use-package ggtags
@@ -138,6 +140,18 @@
 
 (add-to-list 'auto-mode-alist
              '("Jenkinsfile\\'" . groovy-mode))
+
+(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+(add-to-list 'auto-mode-alist '("\\.m\\'" . c++-mode))
+(add-to-list 'auto-mode-alist '("\\.mm\\'" . c++-mode))
+
+(global-set-key (kbd "M-<left>") 'xref-pop-marker-stack)
+(global-set-key (kbd "<f5>") 'projectile-compile-project)
+
+(put 'narrow-to-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
+
+(show-paren-mode)
 
 (provide 'init)
 ;;; init.el ends here
