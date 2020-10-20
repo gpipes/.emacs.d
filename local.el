@@ -11,8 +11,7 @@
 ;;; Code:
 
 (defvar local-el-files-list '())
-(setq local-el-files-list
-      '("~/devcenter/MacClient/Toolbox/CarboniteMac.el"))
+(setq local-el-files-list '())
 (provide 'local)
 
 ;;; local.el ends here
