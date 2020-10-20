@@ -1,4 +1,4 @@
-;;; init.el -- Gerald Pipes' init file
+;;; init.el -- Gerry Pipes' init file
 ;;; Commentary:
 ;;; Code:
 
