@@ -4,9 +4,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(byte-compile-warnings 'nil)
- '(c-default-style "stroustrup")
- '(c-basic-offset 2)
- '(tab-width 2)
  '(company-auto-commit ''company-explicit-action-p)
  '(company-idle-delay 1.0)
  '(ediff-window-setup-function 'ediff-setup-windows-plain)
@@ -45,6 +42,7 @@
  '(realgud-safe-mode nil)
  '(rust-format-on-save t)
  '(show-paren-mode t)
+ '(sql-sqlite-options '("-interactive"))
  '(tool-bar-mode 'nil)
  '(truncate-lines t)
  '(use-package-always-ensure t)

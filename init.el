@@ -8,12 +8,7 @@
 (load custom-file)
 (load win-debug-file)
 (load-theme 'whiteboard)
-
-;; load local.el which sets local-el-files-list to load
-;; ex: (setq local-el-files-list '("path1" "path2"))
-(defvar local-el-files-list '())
 (load (expand-file-name "local.el" user-emacs-directory) t t)
-(mapc (lambda (file) (load file)) local-el-files-list)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                Setup Packages               ;;
@@ -43,12 +38,7 @@
   (:map projectile-mode-map
 	("C-c p" . projectile-command-map)))
 
-(use-package clang-format
-  :init
-  (add-hook 'c-mode-common-hook
-          (function (lambda ()
-                    (add-hook 'before-save-hook
-                              'clang-format-buffer)))))
+(use-package clang-format)
 
 (use-package exec-path-from-shell
   :init (unless (string-equal system-type "windows-nt")
@@ -58,17 +48,11 @@
 (use-package markdown-mode)
 (use-package flymd)
 (use-package cmake-mode)
-(use-package dumb-jump
-  :init
-  (dumb-jump-mode)
-  :bind
-  (("C-<return>" . dumb-jump-go)))
 
 (use-package company
   :init
   (global-company-mode)
-  (delete 'company-clang company-backends)
-  :bind (("M-<tab>" . 'company-complete-common-or-cycle)))
+  (delete 'company-clang company-backends))
 
 (use-package flycheck
   :init (global-flycheck-mode))
@@ -87,15 +71,6 @@
 
 (use-package elfeed)
 (use-package csharp-mode)
-(use-package flycheck-rust)
-(use-package rust-mode
-  :init
-  (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
-(use-package racer
-  :init
-  (add-hook 'rust-mode-hook #'racer-mode)
-  (add-hook 'racer-mode-hook #'company-mode))
-
 (use-package racket-mode)
 
 (use-package helm
@@ -118,27 +93,13 @@
   :bind
   (:map realgud:shortkey-mode-map
         ("n" . realgud:cmd-next-no-arg)))
-
 (use-package realgud-lldb)
 
 (use-package ggtags
   :init
-  (defun ggtags-on () (ggtags-mode 1))
-  (mapc (lambda (mode-name) (add-hook mode-name 'ggtags-on))
-        '(c-mode-common-hook racket-mode-hook python-mode-hook
-                             lisp-mode-hook scheme-mode-hook
-                             java-mode-hook emacs-lisp-mode-hook
-                             javascript-mode-hook))
-  (setenv "GTAGSLABEL" "pygments")
-  (if (not (string-equal system-type "windows-nt"))
-      (setenv "GTAGSCONF" "/usr/local/share/gtags/gtags.conf")
-    (setenv "GTAGSCONF" (concat (getenv "HOMEDRIVE") "/global/share/gtags/gtags.conf")))
-  :bind
-  (("C-M-." . ggtags-find-tag-regexp)
-   (:map ggtags-mode-map
-         ("C-M-<return>" . ggtags-create-tags)
-         ("M->" . end-of-buffer)
-         ("M-<" . beginning-of-buffer))))
+  (ggtags-global-mode)
+  (setenv "GTAGSLABEL" "pygments"))
+
 
 (add-to-list 'auto-mode-alist
 	     '("\\.sj\\'" . javascript-mode))
@@ -155,7 +116,6 @@
 
 (put 'narrow-to-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
-
 (show-paren-mode)
 
 (provide 'init)
