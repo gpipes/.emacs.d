@@ -49,6 +49,8 @@
  '(which-function-mode t)
  '(which-key-mode t)
  '(which-key-popup-type 'side-window)
+ '(xref-prompt-for-identifier
+   '(not xref-find-definitions xref-find-definitions-other-window xref-find-definitions-other-frame xref-find-references))
  '(xref-show-xrefs-function #'helm-xref-show-xrefs))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

@@ -7,7 +7,6 @@
 (defconst win-debug-file (expand-file-name "cdb-gud" user-emacs-directory))
 (load custom-file)
 (load win-debug-file)
-(load-theme 'whiteboard)
 (load (expand-file-name "local.el" user-emacs-directory) t t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -39,10 +38,13 @@
 	("C-c p" . projectile-command-map)))
 
 (use-package clang-format)
+(use-package astyle)
 
 (use-package exec-path-from-shell
-  :init (unless (string-equal system-type "windows-nt")
-          (exec-path-from-shell-initialize)))
+  :init
+  (setenv "PS1" "\\[\\e[34m\\]\\u@\\h \\[\\e[43m\\]\\w\\[\\e[0m\\]\\n$ ")
+  (unless (equal system-type 'windows-nt)
+    (exec-path-from-shell-initialize)))
 
 (use-package which-key)
 (use-package markdown-mode)
@@ -51,8 +53,7 @@
 
 (use-package company
   :init
-  (global-company-mode)
-  (delete 'company-clang company-backends))
+  (global-company-mode))
 
 (use-package flycheck
   :init (global-flycheck-mode))
@@ -77,17 +78,11 @@
   :init (helm-mode 1)
   :bind (("M-x" . helm-M-x)
 	 ("C-x C-f" . helm-find-files)
-	 ("C-x b" . helm-mini)
-	 (:map helm-map
-	       ("<tab>" . helm-execute-persistent-action)
-	       ("C-z" . helm-select-action))))
-
+	 ("C-x b" . helm-mini)))
 (use-package helm-projectile)
 (use-package helm-xref)
-(use-package ssh)
 (use-package powershell)
 (use-package groovy-mode)
-(use-package org-jira)
 
 (use-package realgud
   :bind
@@ -95,25 +90,12 @@
         ("n" . realgud:cmd-next-no-arg)))
 (use-package realgud-lldb)
 
-(use-package ggtags
-  :init
-  (ggtags-global-mode)
-  (setenv "GTAGSLABEL" "pygments"))
-
-
-(add-to-list 'auto-mode-alist
-	     '("\\.sj\\'" . javascript-mode))
-
-(add-to-list 'auto-mode-alist
-             '("Jenkinsfile\\'" . groovy-mode))
-
+(add-to-list 'auto-mode-alist '("\\.sj\\'" . javascript-mode))
+(add-to-list 'auto-mode-alist '("Jenkinsfile\\'" . groovy-mode))
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.m\\'" . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.mm\\'" . c++-mode))
-
-(global-set-key (kbd "M-<left>") 'xref-pop-marker-stack)
-(global-set-key (kbd "<f5>") 'projectile-compile-project)
-
+(c-set-offset 'innamespace [0])
 (put 'narrow-to-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
 (show-paren-mode)
