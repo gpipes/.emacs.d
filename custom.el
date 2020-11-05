@@ -19,7 +19,7 @@
  '(helm-split-window-in-side-p t)
  '(helm-split-window-inside-p t)
  '(indent-tabs-mode nil)
- '(initial-buffer-choice nil)
+ '(initial-buffer-choice "~/")
  '(jiralib-url "https://jira.carboniteinc.com")
  '(magit-git-executable "git")
  '(magit-pull-arguments nil)
@@ -30,8 +30,7 @@
  '(org-agenda-files '("d:/devcenter/Gengine/TODO.org"))
  '(package-archives
    '(("gnu" . "http://elpa.gnu.org/packages/")
-     ("melpa" . "http://melpa.org/packages/")
-     ("org" . "http://orgmode.org/elpa/")))
+     ("melpa" . "http://melpa.org/packages/")))
  '(path-separator ":" t)
  '(pytest-cmd-flags
    "-svr fE --tb=short --basetemp=../automation_output --te_file test/te/my.json --te_cell 127.0.0.1 --env=dev --account=pro --junitxml=../automation_output/junitreports/pyTestResults.xml --instafail --log_level=debug")

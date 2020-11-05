@@ -95,7 +95,6 @@
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.m\\'" . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.mm\\'" . c++-mode))
-(c-set-offset 'innamespace [0])
 (put 'narrow-to-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
 (show-paren-mode)
