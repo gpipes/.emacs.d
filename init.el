@@ -13,10 +13,12 @@
 ;;                Setup Packages               ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(package-refresh-contents)
+(unless package-archive-contents
+  (package-refresh-contents))
 
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
+
 (require 'use-package)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -25,11 +27,6 @@
 (use-package ag)
 (use-package ws-butler
   :init (ws-butler-global-mode))
-
-(use-package magit
-  :bind
-  (("C-x v d" . magit-status)
-   ("C-x v l" . magit-log-buffer-file)))
 
 (use-package projectile
   :init (projectile-mode +1)
@@ -50,11 +47,8 @@
 (use-package markdown-mode)
 (use-package flymd)
 (use-package cmake-mode)
-
 (use-package company
-  :init
-  (global-company-mode))
-
+  :init (global-company-mode))
 (use-package flycheck
   :init (global-flycheck-mode))
 
@@ -74,13 +68,11 @@
 (use-package csharp-mode)
 (use-package racket-mode)
 
-(use-package helm
-  :init (helm-mode 1)
-  :bind (("M-x" . helm-M-x)
-	 ("C-x C-f" . helm-find-files)
-	 ("C-x b" . helm-mini)))
-(use-package helm-projectile)
-(use-package helm-xref)
+(use-package counsel
+  :init (ivy-mode 1)
+  (counsel-mode 1))
+(use-package ivy-xref)
+
 (use-package powershell)
 (use-package groovy-mode)
 

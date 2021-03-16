@@ -11,23 +11,14 @@
  '(flycheck-check-syntax-automatically '(save mode-enable))
  '(geiser-repl-use-other-window nil)
  '(global-company-mode t)
- '(helm-auto-resize-mode t)
- '(helm-completion-style 'emacs)
- '(helm-ff-file-name-history-use-recentf t)
- '(helm-follow-mode-persistent t)
- '(helm-source-names-using-follow '("Buffers" "Helm Xref"))
- '(helm-split-window-in-side-p t)
- '(helm-split-window-inside-p t)
  '(indent-tabs-mode nil)
- '(initial-buffer-choice "~/")
- '(jiralib-url "https://jira.carboniteinc.com")
+ '(initial-buffer-choice nil)
  '(magit-git-executable "git")
  '(magit-pull-arguments nil)
  '(menu-bar-mode 'nil)
  '(mode-line-modes nil t)
  '(ns-command-modifier 'control)
  '(ns-control-modifier 'command)
- '(org-agenda-files '("d:/devcenter/Gengine/TODO.org"))
  '(package-archives
    '(("gnu" . "http://elpa.gnu.org/packages/")
      ("melpa" . "http://melpa.org/packages/")))
@@ -48,9 +39,8 @@
  '(which-function-mode t)
  '(which-key-mode t)
  '(which-key-popup-type 'side-window)
- '(xref-prompt-for-identifier
-   '(not xref-find-definitions xref-find-definitions-other-window xref-find-definitions-other-frame xref-find-references))
- '(xref-show-xrefs-function #'helm-xref-show-xrefs))
+ '(xref-show-xrefs-function #'ivy-xref-show-xrefs)
+ '(xref-show-definitions-function #'ivy-xref-show-defs))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
