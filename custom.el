@@ -30,7 +30,6 @@
      (dirname)
      (string-suffix-p "automation/" dirname t)))
  '(realgud-safe-mode nil)
- '(rust-format-on-save t)
  '(show-paren-mode t)
  '(sql-sqlite-options '("-interactive"))
  '(tool-bar-mode 'nil)
@@ -39,8 +38,8 @@
  '(which-function-mode t)
  '(which-key-mode t)
  '(which-key-popup-type 'side-window)
- '(xref-show-xrefs-function #'ivy-xref-show-xrefs)
- '(xref-show-definitions-function #'ivy-xref-show-defs))
+ '(xref-show-definitions-function #'ivy-xref-show-defs)
+ '(xref-show-xrefs-function #'ivy-xref-show-xrefs))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -4,10 +4,7 @@
 
 (package-initialize)
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(defconst win-debug-file (expand-file-name "cdb-gud" user-emacs-directory))
 (load custom-file)
-(load win-debug-file)
-(load (expand-file-name "local.el" user-emacs-directory) t t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                Setup Packages               ;;
@@ -25,6 +22,18 @@
 ;;               Require Packages              ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package ag)
+(use-package clang-format)
+(use-package astyle)
+(use-package which-key)
+(use-package ivy-xref)
+(use-package powershell)
+(use-package groovy-mode)
+(use-package csharp-mode)
+(use-package racket-mode)
+(use-package markdown-mode)
+(use-package cmake-mode)
+(use-package ssh)
+
 (use-package ws-butler
   :init (ws-butler-global-mode))
 
@@ -34,53 +43,26 @@
   (:map projectile-mode-map
 	("C-c p" . projectile-command-map)))
 
-(use-package clang-format)
-(use-package astyle)
-
 (use-package exec-path-from-shell
   :init
   (setenv "PS1" "\\[\\e[34m\\]\\u@\\h \\[\\e[43m\\]\\w\\[\\e[0m\\]\\n$ ")
   (unless (equal system-type 'windows-nt)
     (exec-path-from-shell-initialize)))
 
-(use-package which-key)
-(use-package markdown-mode)
-(use-package flymd)
-(use-package cmake-mode)
 (use-package company
   :init (global-company-mode))
-(use-package flycheck
-  :init (global-flycheck-mode))
-
-(use-package paredit
-  :init
-  (defun paredit-on () (paredit-mode 1))
-  (add-hook 'scheme-mode-hook  'paredit-on)
-  (add-hook 'emacs-lisp-mode-hook 'paredit-on)
-  (add-hook 'racket-mode-hook 'paredit-on))
 
 (use-package pytest
   :bind
   (("C-c ." . pytest-one)
    ("C-c SPC" . pytest-all)))
 
-(use-package elfeed)
-(use-package csharp-mode)
-(use-package racket-mode)
-
 (use-package counsel
-  :init (ivy-mode 1)
-  (counsel-mode 1))
-(use-package ivy-xref)
-
-(use-package powershell)
-(use-package groovy-mode)
-
-(use-package realgud
+  :init
+  (ivy-mode 1)
+  (counsel-mode 1)
   :bind
-  (:map realgud:shortkey-mode-map
-        ("n" . realgud:cmd-next-no-arg)))
-(use-package realgud-lldb)
+  ("C-c a" . counsel-ag))
 
 (add-to-list 'auto-mode-alist '("\\.sj\\'" . javascript-mode))
 (add-to-list 'auto-mode-alist '("Jenkinsfile\\'" . groovy-mode))
