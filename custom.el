@@ -8,17 +8,10 @@
  '(company-idle-delay 1.0)
  '(ediff-window-setup-function 'ediff-setup-windows-plain)
  '(elfeed-feeds '("https://www.gamespot.com/feeds/game-news/"))
- '(flycheck-check-syntax-automatically '(save mode-enable))
- '(geiser-repl-use-other-window nil)
  '(global-company-mode t)
  '(indent-tabs-mode nil)
- '(initial-buffer-choice nil)
- '(magit-git-executable "git")
- '(magit-pull-arguments nil)
  '(menu-bar-mode 'nil)
  '(mode-line-modes nil t)
- '(ns-command-modifier 'control)
- '(ns-control-modifier 'command)
  '(package-archives
    '(("gnu" . "http://elpa.gnu.org/packages/")
      ("melpa" . "http://melpa.org/packages/")))
@@ -29,7 +22,6 @@
    (lambda
      (dirname)
      (string-suffix-p "automation/" dirname t)))
- '(realgud-safe-mode nil)
  '(show-paren-mode t)
  '(sql-sqlite-options '("-interactive"))
  '(tool-bar-mode 'nil)
@@ -45,4 +37,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:extend t :slant normal :weight bold :height 151 :width normal :family "Ubuntu Mono")))))
+ '(default ((t (:extend t :slant normal :weight bold :height 201 :width normal :family "Ubuntu Mono")))))

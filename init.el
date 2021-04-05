@@ -5,6 +5,7 @@
 (package-initialize)
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
+(load-theme 'wheatgrass)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                Setup Packages               ;;
@@ -21,7 +22,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;               Require Packages              ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package ag)
 (use-package clang-format)
 (use-package astyle)
 (use-package which-key)
@@ -33,6 +33,8 @@
 (use-package markdown-mode)
 (use-package cmake-mode)
 (use-package ssh)
+(use-package geiser)
+(use-package geiser-guile)
 
 (use-package ws-butler
   :init (ws-butler-global-mode))
@@ -62,7 +64,7 @@
   (ivy-mode 1)
   (counsel-mode 1)
   :bind
-  ("C-c a" . counsel-ag))
+  ("C-c s" . counsel-git-grep))
 
 (add-to-list 'auto-mode-alist '("\\.sj\\'" . javascript-mode))
 (add-to-list 'auto-mode-alist '("Jenkinsfile\\'" . groovy-mode))
