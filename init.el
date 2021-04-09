@@ -26,6 +26,7 @@
 (use-package astyle)
 (use-package which-key)
 (use-package ivy-xref)
+(use-package pinentry)
 (use-package powershell)
 (use-package groovy-mode)
 (use-package csharp-mode)
@@ -56,15 +57,18 @@
 
 (use-package pytest
   :bind
-  (("C-c ." . pytest-one)
-   ("C-c SPC" . pytest-all)))
+  (:map python-mode-map
+        ("C-c ." . pytest-one)
+        ("C-c M-." . pytest-all)))
+
+(use-package ivy-pass
+  :bind ("C-c M-p" . ivy-pass))
 
 (use-package counsel
   :init
   (ivy-mode 1)
   (counsel-mode 1)
-  :bind
-  ("C-c s" . counsel-git-grep))
+  :bind ("C-c s" . counsel-git-grep))
 
 (add-to-list 'auto-mode-alist '("\\.sj\\'" . javascript-mode))
 (add-to-list 'auto-mode-alist '("Jenkinsfile\\'" . groovy-mode))
