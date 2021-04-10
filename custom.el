@@ -6,6 +6,8 @@
  '(byte-compile-warnings 'nil)
  '(company-auto-commit ''company-explicit-action-p)
  '(company-idle-delay 1.0)
+ '(clang-format-fallback-style "gnu")
+ '(astyle-style "gnu")
  '(ediff-window-setup-function 'ediff-setup-windows-plain)
  '(elfeed-feeds '("https://www.gamespot.com/feeds/game-news/"))
  '(global-company-mode t)
@@ -33,4 +35,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:extend t :slant normal :weight bold :height 201 :width normal :family "Ubuntu Mono")))))
+ )
