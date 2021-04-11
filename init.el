@@ -31,6 +31,7 @@
 (use-package groovy-mode)
 (use-package csharp-mode)
 (use-package racket-mode)
+(use-package lua-mode)
 (use-package markdown-mode)
 (use-package cmake-mode)
 (use-package ssh)

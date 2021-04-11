@@ -3,11 +3,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(astyle-style "gnu")
  '(byte-compile-warnings 'nil)
+ '(clang-format-fallback-style "gnu")
  '(company-auto-commit ''company-explicit-action-p)
  '(company-idle-delay 1.0)
- '(clang-format-fallback-style "gnu")
- '(astyle-style "gnu")
  '(ediff-window-setup-function 'ediff-setup-windows-plain)
  '(elfeed-feeds '("https://www.gamespot.com/feeds/game-news/"))
  '(global-company-mode t)
