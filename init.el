@@ -38,6 +38,9 @@
 (use-package geiser)
 (use-package geiser-guile)
 
+(use-package org
+  :bind ("C-c a" . org-agenda))
+
 (use-package ws-butler
   :init (ws-butler-global-mode))
 
