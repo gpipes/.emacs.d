@@ -39,7 +39,10 @@
 (use-package geiser-guile)
 
 (use-package org
-  :bind ("C-c a" . org-agenda))
+  :bind ("C-c a" . org-agenda)
+  :hook ;; turn on auto fill for text/organization modes
+  (org-mode . turn-on-auto-fill)
+  (text-mode . turn-on-auto-fill))
 
 (use-package ws-butler
   :init (ws-butler-global-mode))
