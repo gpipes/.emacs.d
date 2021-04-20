@@ -15,6 +15,17 @@
  '(menu-bar-mode 'nil)
  '(mode-line-modes nil t)
  '(org-agenda-files '("~/notes"))
+ '(org-log-note-headings
+   '((done . "CLOSING NOTE %D")
+     (state . "State %-12s from %-12S %D")
+     (note . "Note taken on %D")
+     (reschedule . "Rescheduled from %S on %t")
+     (delschedule . "Not scheduled, was %S on %t")
+     (redeadline . "New deadline from %S on %t")
+     (deldeadline . "Removed deadline, was %S on %t")
+     (refile . "Refiled on %t")
+     (clock-out . "")))
+ '(org-show-notification-handler '(lambda (notif) (message (concat "Org Timer " notif))))
  '(package-archives
    '(("gnu" . "http://elpa.gnu.org/packages/")
      ("melpa" . "http://melpa.org/packages/")))
