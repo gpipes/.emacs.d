@@ -7,6 +7,9 @@
 (load custom-file)
 (load-theme 'wheatgrass)
 
+(add-hook 'dired-load-hook
+          (lambda () (load "dired-x")))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                Setup Packages               ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -47,20 +50,11 @@
 (use-package ws-butler
   :init (ws-butler-global-mode))
 
-(use-package projectile
-  :init (projectile-mode +1)
-  :bind
-  (:map projectile-mode-map
-	("C-c p" . projectile-command-map)))
-
 (use-package exec-path-from-shell
   :init
   (setenv "PS1" "\\[\\e[34m\\]\\u@\\h \\[\\e[43m\\]\\w\\[\\e[0m\\]\\n$ ")
   (unless (equal system-type 'windows-nt)
     (exec-path-from-shell-initialize)))
-
-(use-package company
-  :init (global-company-mode))
 
 (use-package pytest
   :bind
@@ -74,8 +68,7 @@
 (use-package counsel
   :init
   (ivy-mode 1)
-  (counsel-mode 1)
-  :bind ("C-c s" . counsel-git-grep))
+  (counsel-mode 1))
 
 (add-to-list 'auto-mode-alist '("\\.sj\\'" . javascript-mode))
 (add-to-list 'auto-mode-alist '("Jenkinsfile\\'" . groovy-mode))
