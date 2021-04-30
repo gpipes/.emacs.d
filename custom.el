@@ -6,6 +6,7 @@
  '(astyle-style "gnu")
  '(byte-compile-warnings 'nil)
  '(clang-format-fallback-style "gnu")
+ '(tab-width 4)
  '(ediff-window-setup-function 'ediff-setup-windows-plain)
  '(elfeed-feeds '("https://www.gamespot.com/feeds/game-news/"))
  '(epg-pinentry-mode 'loopback)
