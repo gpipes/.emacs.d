@@ -27,7 +27,6 @@
  '(package-archives
    '(("gnu" . "http://elpa.gnu.org/packages/")
      ("melpa" . "http://melpa.org/packages/")))
- '(path-separator ":" t)
  '(show-paren-mode t)
  '(sql-ms-program "sqlcmd")
  '(sql-sqlite-options '("-interactive"))
