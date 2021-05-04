@@ -9,7 +9,6 @@
  '(ediff-window-setup-function 'ediff-setup-windows-plain)
  '(elfeed-feeds '("https://www.gamespot.com/feeds/game-news/"))
  '(epg-pinentry-mode 'loopback)
- '(ido-mode 'both nil (ido))
  '(indent-tabs-mode nil)
  '(menu-bar-mode 'nil)
  '(mode-line-modes nil t)
