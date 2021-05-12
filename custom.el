@@ -7,7 +7,6 @@
  '(byte-compile-warnings 'nil)
  '(clang-format-fallback-style "gnu")
  '(ediff-window-setup-function 'ediff-setup-windows-plain)
- '(elfeed-feeds '("https://www.gamespot.com/feeds/game-news/"))
  '(epg-pinentry-mode 'loopback)
  '(indent-tabs-mode nil)
  '(menu-bar-mode 'nil)
