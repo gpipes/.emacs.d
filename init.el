@@ -39,6 +39,8 @@
 (use-package ssh)
 (use-package geiser)
 (use-package geiser-guile)
+(use-package nov)
+(use-package pytest)
 
 (use-package org
   :bind ("C-c a" . org-agenda)
@@ -48,12 +50,6 @@
 
 (use-package ws-butler
   :init (ws-butler-global-mode))
-
-(use-package pytest
-  :bind
-  (:map python-mode-map
-        ("C-c ." . pytest-one)
-        ("C-c M-." . pytest-all)))
 
 (add-to-list 'auto-mode-alist '("\\.sj\\'" . javascript-mode))
 (add-to-list 'auto-mode-alist '("Jenkinsfile\\'" . groovy-mode))
