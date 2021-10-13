@@ -8,6 +8,7 @@
  '(clang-format-fallback-style "gnu")
  '(ediff-window-setup-function 'ediff-setup-windows-plain)
  '(epg-pinentry-mode 'loopback)
+ '(global-font-lock-mode nil)
  '(indent-tabs-mode nil)
  '(menu-bar-mode 'nil)
  '(mode-line-modes nil t)
@@ -22,7 +23,7 @@
      (deldeadline . "Removed deadline, was %S on %t")
      (refile . "Refiled on %t")
      (clock-out . "")))
- '(org-show-notification-handler '(lambda (notif) (message (concat "Org Timer " notif))))
+ '(org-show-notification-handler '(lambda (notif) (message (concat "Org Timer " notif))) t)
  '(package-archives
    '(("gnu" . "http://elpa.gnu.org/packages/")
      ("melpa" . "http://melpa.org/packages/")))

@@ -39,6 +39,7 @@
 (use-package ssh)
 (use-package geiser)
 (use-package geiser-guile)
+(use-package geiser-racket)
 (use-package nov)
 (use-package pytest)
 
@@ -62,3 +63,4 @@
 
 (provide 'init)
 ;;; init.el ends here
+(put 'scroll-left 'disabled nil)
