@@ -4,10 +4,12 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(astyle-style "gnu")
+ '(auto-fill-mode 1)
  '(byte-compile-warnings 'nil)
  '(clang-format-fallback-style "gnu")
  '(ediff-window-setup-function 'ediff-setup-windows-plain)
  '(epg-pinentry-mode 'loopback)
+ '(fill-column 79)
  '(global-font-lock-mode nil)
  '(indent-tabs-mode nil)
  '(menu-bar-mode 'nil)

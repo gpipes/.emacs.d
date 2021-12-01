@@ -27,7 +27,6 @@
 (use-package clang-format)
 (use-package astyle)
 (use-package which-key)
-(use-package ivy-xref)
 (use-package pinentry)
 (use-package powershell)
 (use-package groovy-mode)
@@ -36,11 +35,9 @@
 (use-package lua-mode)
 (use-package markdown-mode)
 (use-package cmake-mode)
-(use-package ssh)
 (use-package geiser)
 (use-package geiser-guile)
 (use-package geiser-racket)
-(use-package nov)
 (use-package pytest)
 
 (use-package org
@@ -57,6 +54,8 @@
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.m\\'" . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.mm\\'" . c++-mode))
+(add-to-list 'semantic-symref-filepattern-alist
+             '(dired-mode "*.*"))
 (put 'narrow-to-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
 (show-paren-mode)
