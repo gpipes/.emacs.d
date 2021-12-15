@@ -27,7 +27,10 @@
 (use-package clang-format)
 (use-package astyle)
 (use-package which-key)
+
+(use-package pass)
 (use-package pinentry)
+
 (use-package powershell)
 (use-package groovy-mode)
 (use-package csharp-mode)
@@ -35,6 +38,7 @@
 (use-package lua-mode)
 (use-package markdown-mode)
 (use-package cmake-mode)
+
 (use-package geiser)
 (use-package geiser-guile)
 (use-package geiser-racket)
