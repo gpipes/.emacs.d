@@ -12,7 +12,7 @@
  '(global-font-lock-mode nil)
  '(menu-bar-mode 'nil)
  '(mode-line-modes nil t)
- '(org-agenda-files '("~/notes/agenda.org"))
+ '(org-agenda-files '("~/notes"))
  '(package-archives
    '(("gnu" . "http://elpa.gnu.org/packages/")
 	 ("melpa" . "http://melpa.org/packages/")))
