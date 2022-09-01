@@ -13,6 +13,7 @@
  '(menu-bar-mode 'nil)
  '(mode-line-modes nil t)
  '(org-agenda-files '("~/notes"))
+ '(org-agenda-include-diary t)
  '(package-archives
    '(("gnu" . "http://elpa.gnu.org/packages/")
 	 ("melpa" . "http://melpa.org/packages/")))
