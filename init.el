@@ -30,10 +30,7 @@
 (use-package markdown-mode)
 (use-package cmake-mode)
 
-(use-package org
-  :hook
-  (org-mode . turn-on-auto-fill)
-  (text-mode . turn-on-auto-fill))
+(use-package org)
 
 (use-package geiser)
 (use-package geiser-guile)
