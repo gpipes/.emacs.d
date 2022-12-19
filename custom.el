@@ -4,7 +4,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(astyle-style "gnu")
- '(auto-fill-function 'do-auto-fill)
+ '(auto-fill-function 'do-auto-fill t)
  '(byte-compile-warnings 'nil)
  '(epg-pinentry-mode 'loopback)
  '(fill-column 80)
@@ -17,14 +17,14 @@
  '(package-archives
    '(("gnu" . "http://elpa.gnu.org/packages/")
 	 ("melpa" . "http://melpa.org/packages/")))
- '(package-selected-packages
-   '(realgud-lldb realgud ws-butler pytest geiser-racket geiser-guile geiser cmake-mode markdown-mode lua-mode racket-mode csharp-mode groovy-mode powershell pinentry pass which-key astyle clang-format use-package))
  '(password-store-password-length 10)
  '(show-paren-mode t)
  '(sql-ms-program "sqlcmd")
  '(sql-sqlite-options '("-interactive"))
  '(tab-width 4)
  '(tool-bar-mode 'nil)
+ '(tramp-remote-path '(tramp-own-remote-path))
+ '(tramp-sh-extra-args nil)
  '(use-package-always-ensure t)
  '(which-function-mode t)
  '(which-key-mode t))
