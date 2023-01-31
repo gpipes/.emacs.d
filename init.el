@@ -3,8 +3,7 @@
 ;;; Code:
 
 (package-initialize)
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(load custom-file)
+(load (expand-file-name "custom.el" user-emacs-directory))
 (load-theme 'wheatgrass)
 
 (unless package-archive-contents
@@ -17,26 +16,17 @@
 
 (use-package clang-format)
 (use-package astyle)
-(use-package which-key)
-
 (use-package pass)
 (use-package pinentry)
-
 (use-package powershell)
 (use-package groovy-mode)
 (use-package csharp-mode)
 (use-package racket-mode)
-(use-package lua-mode)
 (use-package markdown-mode)
 (use-package cmake-mode)
-
-(use-package org)
-
 (use-package geiser)
 (use-package geiser-guile)
 (use-package geiser-racket)
-(use-package pytest)
-
 (use-package ws-butler
   :init (ws-butler-global-mode))
 
@@ -48,7 +38,6 @@
 (put 'narrow-to-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
 (put 'scroll-left 'disabled nil)
-(show-paren-mode)
 
 (provide 'init)
 ;;; init.el ends here
