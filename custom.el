@@ -16,6 +16,7 @@
  '(org-agenda-files '("~/notes"))
  '(org-agenda-include-diary t)
  '(org-log-note-clock-out t)
+ '(org-log-done note)
  '(package-archives
    '(("gnu" . "http://elpa.gnu.org/packages/")
 	 ("melpa" . "http://melpa.org/packages/")))
