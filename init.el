@@ -16,7 +16,6 @@
  '(global-font-lock-mode nil)
  '(indent-tabs-mode nil)
  '(menu-bar-mode 'nil)
- '(mode-line-compact t)
  '(org-agenda-files '("~/notes"))
  '(org-agenda-include-diary t)
  '(org-clock-mode-line-total 'current)
