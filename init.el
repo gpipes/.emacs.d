@@ -32,9 +32,9 @@
 (mapc 'require package-selected-packages)
 (ws-butler-global-mode)
 
+(defcustom file-mode-list nil "ASSOC list of filenames and modes")
 (defun add-to-auto-mode (element)
   (add-to-list 'auto-mode-alist element))
-(defcustom file-mode-list nil "Assoc list of filenames and modes")
 (mapc 'add-to-auto-mode file-mode-list)
 
 (put 'narrow-to-region 'disabled nil)
