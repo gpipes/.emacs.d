@@ -1,18 +1,42 @@
 ;;; init.el -- Gerry Pipes' init file
 ;;; Commentary:
 ;;; Code:
+(custom-set-variables
+ '(epg-pinentry-mode 'loopback)
+ '(fill-column 80)
+ '(global-display-fill-column-indicator-mode t)
+ '(global-font-lock-mode nil)
+ '(indent-tabs-mode nil)
+ '(menu-bar-mode 'nil)
+ '(org-agenda-files '("~/notes"))
+ '(org-agenda-include-diary t)
+ '(org-log-note-clock-out t)
+ '(org-log-done 'note)
+ '(org-clock-mode-line-total 'current)
+ '(package-archives
+   '(("gnu" . "http://elpa.gnu.org/packages/")
+     ("melpa" . "http://melpa.org/packages/")))
+ '(package-selected-packages
+   '(clang-format pass pinentry powershell groovy-mode csharp-mode racket-mode
+                  markdown-mode cmake-mode ws-butler))
+ '(password-store-password-length 10)
+ '(tool-bar-mode 'nil)
+ '(tramp-remote-path '(tramp-own-remote-path))
+ '(tramp-sh-extra-args nil)
+ '(file-mode-list
+   '(("\\.sj\\'" . javascript-mode) ("Jenkinsfile\\'" . groovy-mode)
+     ("\\.h\\'" . c++-mode))))
 
-
-(load (expand-file-name "custom.el" user-emacs-directory))
 (load-theme 'wheatgrass)
 (package-install-selected-packages)
 (mapc 'require package-selected-packages)
 (ws-butler-global-mode)
-(add-to-list 'auto-mode-alist '("\\.sj\\'" . javascript-mode))
-(add-to-list 'auto-mode-alist '("Jenkinsfile\\'" . groovy-mode))
-(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
-(add-to-list 'semantic-symref-filepattern-alist
-             '(dired-mode "*.*"))
+
+(defun add-to-auto-mode (element)
+  (add-to-list 'auto-mode-alist element))
+(defcustom file-mode-list nil "Assoc list of filenames and modes")
+(mapc 'add-to-auto-mode file-mode-list)
+
 (put 'narrow-to-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
 (put 'scroll-left 'disabled nil)
