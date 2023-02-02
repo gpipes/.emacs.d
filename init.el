@@ -1,30 +1,13 @@
 ;;; init.el -- Gerry Pipes' init file
 ;;; Commentary:
 ;;; Code:
-(package-initialize)
+
+
 (load (expand-file-name "custom.el" user-emacs-directory))
 (load-theme 'wheatgrass)
-
-(unless package-archive-contents
-  (package-refresh-contents))
-
-(unless (package-installed-p 'use-package)
-  (package-install 'use-package))
-
-(require 'use-package)
-
-(use-package clang-format)
-(use-package pass)
-(use-package pinentry)
-(use-package powershell)
-(use-package groovy-mode)
-(use-package csharp-mode)
-(use-package racket-mode)
-(use-package markdown-mode)
-(use-package cmake-mode)
-(use-package ws-butler
-  :init (ws-butler-global-mode))
-
+(package-install-selected-packages)
+(mapc 'require package-selected-packages)
+(ws-butler-global-mode)
 (add-to-list 'auto-mode-alist '("\\.sj\\'" . javascript-mode))
 (add-to-list 'auto-mode-alist '("Jenkinsfile\\'" . groovy-mode))
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
