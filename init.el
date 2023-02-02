@@ -1,7 +1,6 @@
 ;;; init.el -- Gerry Pipes' init file
 ;;; Commentary:
 ;;; Code:
-
 (package-initialize)
 (load (expand-file-name "custom.el" user-emacs-directory))
 (load-theme 'wheatgrass)
@@ -15,7 +14,6 @@
 (require 'use-package)
 
 (use-package clang-format)
-(use-package astyle)
 (use-package pass)
 (use-package pinentry)
 (use-package powershell)
@@ -24,9 +22,6 @@
 (use-package racket-mode)
 (use-package markdown-mode)
 (use-package cmake-mode)
-(use-package geiser)
-(use-package geiser-guile)
-(use-package geiser-racket)
 (use-package ws-butler
   :init (ws-butler-global-mode))
 
