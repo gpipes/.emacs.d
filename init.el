@@ -2,7 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 (custom-set-variables
- '(epg-pinentry-mode 'loopback)
  '(file-mode-list
    '(("\\.sj\\'" . javascript-mode)
      ("Jenkinsfile\\'" . groovy-mode)
@@ -12,16 +11,14 @@
  '(global-font-lock-mode nil)
  '(indent-tabs-mode nil)
  '(menu-bar-mode 'nil)
- '(org-agenda-files '("~/notes"))
- '(org-agenda-include-diary t)
+ '(org-agenda-files '("~/notes/log.org"))
  '(org-clock-mode-line-total 'current)
  '(org-log-done 'note)
  '(org-log-note-clock-out t)
  '(package-archives
    '(("gnu" . "http://elpa.gnu.org/packages/")
      ("melpa" . "http://melpa.org/packages/")))
- '(package-selected-packages
-   '(powershell groovy-mode csharp-mode))
+ '(package-selected-packages '(powershell groovy-mode csharp-mode))
  '(password-store-password-length 10)
  '(tool-bar-mode 'nil)
  '(tramp-remote-path '(tramp-own-remote-path))
@@ -40,3 +37,4 @@
 
 (provide 'init)
 ;;; init.el ends here
+
