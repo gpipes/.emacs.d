@@ -22,10 +22,10 @@
      ("melpa" . "http://melpa.org/packages/")))
  '(package-selected-packages '(powershell groovy-mode csharp-mode))
  '(password-store-password-length 10)
+ '(scheme-program-name "racket")
  '(tool-bar-mode 'nil)
  '(tramp-remote-path '(tramp-own-remote-path))
- '(tramp-sh-extra-args nil)
- '(xscheme-process-name "racket"))
+ '(tramp-sh-extra-args nil))
 
 (package-install-selected-packages)
 (mapc 'require package-selected-packages)
