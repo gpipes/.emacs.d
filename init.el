@@ -2,10 +2,12 @@
 ;;; Commentary:
 ;;; Code:
 (custom-set-variables
+ '(epg-pinentry-mode loopback)
  '(file-mode-list
    '(("\\.sj\\'" . javascript-mode)
      ("Jenkinsfile\\'" . groovy-mode)
-     ("\\.h\\'" . c++-mode)))
+     ("\\.h\\'" . c++-mode)
+     ("\\.rkt\\'" . scheme-mode)))
  '(fill-column 80)
  '(global-display-fill-column-indicator-mode t)
  '(global-font-lock-mode nil)
