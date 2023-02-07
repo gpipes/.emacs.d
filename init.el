@@ -2,7 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 (custom-set-variables
- '(epg-pinentry-mode loopback)
+ '(epg-pinentry-mode 'loopback)
  '(file-mode-list
    '(("\\.sj\\'" . javascript-mode)
      ("Jenkinsfile\\'" . groovy-mode)
