@@ -24,7 +24,8 @@
  '(password-store-password-length 10)
  '(tool-bar-mode 'nil)
  '(tramp-remote-path '(tramp-own-remote-path))
- '(tramp-sh-extra-args nil))
+ '(tramp-sh-extra-args nil)
+ '(xscheme-process-name "racket"))
 
 (package-install-selected-packages)
 (mapc 'require package-selected-packages)
