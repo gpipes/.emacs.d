@@ -20,7 +20,8 @@
  '(package-archives
    '(("gnu" . "http://elpa.gnu.org/packages/")
      ("melpa" . "http://melpa.org/packages/")))
- '(package-selected-packages '(powershell groovy-mode csharp-mode))
+ '(package-selected-packages
+   '(password-store powershell groovy-mode csharp-mode))
  '(password-store-password-length 10)
  '(scheme-program-name "racket")
  '(tool-bar-mode 'nil)
