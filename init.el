@@ -6,8 +6,7 @@
  '(file-mode-list
    '(("\\.sj\\'" . javascript-mode)
      ("Jenkinsfile\\'" . groovy-mode)
-     ("\\.h\\'" . c++-mode)
-     ("\\.rkt\\'" . scheme-mode)))
+     ("\\.h\\'" . c++-mode)))
  '(fill-column 80)
  '(global-display-fill-column-indicator-mode t)
  '(global-font-lock-mode nil)
@@ -23,7 +22,7 @@
  '(package-selected-packages
    '(password-store powershell groovy-mode csharp-mode))
  '(password-store-password-length 10)
- '(scheme-program-name "racket")
+ '(scheme-program-name "csi")
  '(tool-bar-mode 'nil)
  '(tramp-remote-path '(tramp-own-remote-path))
  '(tramp-sh-extra-args nil))
