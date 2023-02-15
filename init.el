@@ -37,6 +37,7 @@
 
 (put 'narrow-to-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
+(set-face-attribute 'default nil :height 180)
 
 (provide 'init)
 ;;; init.el ends here
