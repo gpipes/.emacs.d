@@ -9,9 +9,9 @@
  '(allow-func-list '(narrow-to-region))
  '(epg-pinentry-mode 'loopback)
  '(file-mode-list '(("Jenkinsfile\\'" . groovy-mode)))
+ '(fill-column 75)
+ '(global-display-fill-column-indicator-mode 1)
  '(global-font-lock-mode nil)
- '(indent-tabs-mode nil)
- '(menu-bar-mode 'nil)
  '(org-agenda-files '("~/notes/log.org"))
  '(org-log-done 'note)
  '(org-log-note-clock-out t)
@@ -21,7 +21,6 @@
  '(package-selected-packages '(password-store powershell groovy-mode
                                               csharp-mode))
  '(password-store-password-length 10)
- '(tool-bar-mode 'nil)
  '(tramp-remote-path '(tramp-own-remote-path))
  '(tramp-sh-extra-args nil)
  '(view-read-only t))
@@ -44,7 +43,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:height 160)))))
+ '(default ((t (:height 240)))))
 
 (provide 'init)
 ;;; init.el ends here
