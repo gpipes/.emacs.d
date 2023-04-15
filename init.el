@@ -8,7 +8,8 @@
  ;; If there is more than one, they won't work right.
  '(allow-func-list '(narrow-to-region))
  '(epg-pinentry-mode 'loopback)
- '(file-mode-list '(("Jenkinsfile\\'" . groovy-mode)))
+ '(file-mode-list '(("Jenkinsfile\\'" . groovy-mode)
+		    ("\\.go\\'" . go-mode)))
  '(fill-column 75)
  '(global-display-fill-column-indicator-mode 1)
  '(global-font-lock-mode nil)
@@ -18,8 +19,8 @@
  '(package-archives
    '(("gnu" . "http://elpa.gnu.org/packages/")
      ("melpa" . "http://melpa.org/packages/")))
- '(package-selected-packages '(password-store powershell groovy-mode
-                                              csharp-mode))
+ '(package-selected-packages
+   '(go-mode password-store powershell groovy-mode csharp-mode))
  '(password-store-password-length 10)
  '(tramp-remote-path '(tramp-own-remote-path))
  '(tramp-sh-extra-args nil)
