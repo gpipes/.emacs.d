@@ -13,7 +13,6 @@
  '(fill-column 75)
  '(global-display-fill-column-indicator-mode 1)
  '(global-font-lock-mode nil)
- '(indent-tabs-mode nil)
  '(org-agenda-files '("~/notes/log.org"))
  '(org-log-done 'note)
  '(org-log-note-clock-out t)
