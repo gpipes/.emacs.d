@@ -8,8 +8,7 @@
  ;; If there is more than one, they won't work right.
  '(allow-func-list '(narrow-to-region))
  '(epg-pinentry-mode 'loopback)
- '(file-mode-list '(("Jenkinsfile\\'" . groovy-mode)
-					("\\.go\\'" . go-mode)))
+ '(file-mode-list '(("Jenkinsfile\\'" . groovy-mode)))
  '(fill-column 75)
  '(global-display-fill-column-indicator-mode 1)
  '(global-font-lock-mode nil)
@@ -23,7 +22,7 @@
  '(view-read-only t))
 
 (add-to-list 'load-path "~/.emacs.d/lisp")
-(mapc 'require '(go-mode password-store powershell groovy-mode))
+(mapc 'require '(password-store powershell groovy-mode))
 
 (defcustom file-mode-list nil "ASSOC list of filenames and modes")
 (defun add-to-auto-mode (element)
