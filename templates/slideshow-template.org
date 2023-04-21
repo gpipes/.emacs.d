@@ -18,7 +18,7 @@ working on a presentation.
 #+options: email:nil f:t inline:t num:t p:nil pri:nil prop:nil stat:t
 #+options: tags:t tasks:t tex:t timestamp:t title:t toc:nil todo:t |:t
 #+title: PRESENTATION TEMPLATE
-#+author: author
+#+author: gerry
 #+email: email
 #+language: en
 #+select_tags: export
