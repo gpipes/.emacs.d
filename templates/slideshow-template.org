@@ -2,7 +2,7 @@
 This is an easy template based on the org-mode website's instructions to
 build beamer presentations with org mode and latex.
 
-At the time of writing this the tutorial is located here
+At the time of writing this, the tutorial is located here
 https://orgmode.org/worg/exporters/beamer/tutorial.html
 
 It was generated using `C-c C-e # default` then the extra tags were added
