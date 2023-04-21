@@ -24,3 +24,5 @@ tramp
 diary
 projects
 eln-cache/
+*.tex
+*.pdf
