@@ -652,5 +652,5 @@ off the specialized speedbar mode."
 (if (require 'auto-complete nil t)
 	(add-hook 'cdb-mode-hook 'cdb-ac-mode-init))
 
-;;; cdb-gud.el ends here
 (provide 'cdb-gud)
+;;; cdb-gud.el ends here
