@@ -29,8 +29,8 @@
 
 ;;; Updates:
 
-;; 2023/04/21 Updated by gpipes. Added provide to allow for includes
-;;            as a required package
+;; 2023/04/21 Updated by gpipes. Added provide statement to allow
+;;            cdb-gud.el to be included using the require function
 
 
 ;;; Commentary:
