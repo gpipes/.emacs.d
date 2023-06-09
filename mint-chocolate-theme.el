@@ -17,7 +17,9 @@
 ;;; Commentary:
 ;;  simple mint green and black theme with very little highlighting.
 ;;  I do not use font lock mode and don't plan to support anything more
-;;  than keeping the look of this theme very simple
+;;  than keeping the look of this theme very simple.
+
+;;  I may update more modes to support the simple mint chocolate look.
 
 ;;; Code:
 
