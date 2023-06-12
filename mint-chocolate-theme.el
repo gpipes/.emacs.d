@@ -31,5 +31,4 @@
    'mint-chocolate
    `(default ((t . (:foreground ,chocolate
 								:background ,mint))))))
-							  
-							  
+							 
