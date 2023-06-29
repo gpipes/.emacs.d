@@ -13,6 +13,7 @@
  '(global-display-fill-column-indicator-mode 1)
  '(global-font-lock-mode nil)
  '(ido-show-dot-for-dired t)
+ '(python-shell-interpreter "python")
  '(org-agenda-files '("~/notes/log.org"))
  '(org-log-done 'note)
  '(org-log-note-clock-out t)
@@ -36,7 +37,6 @@
   (put func-sym 'disabled nil))
 (mapc 'allow-func allow-func-list)
 
-(semantic-mode t)
 (ido-mode t)
 
 (custom-set-faces
