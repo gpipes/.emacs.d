@@ -17,7 +17,6 @@
  '(org-agenda-files '("~/notes/log.org"))
  '(org-log-done 'note)
  '(org-log-note-clock-out t)
- '(password-store-password-length 10)
  '(tab-width 4)
  '(tramp-remote-path '(tramp-own-remote-path))
  '(tramp-sh-extra-args nil)
@@ -25,7 +24,7 @@
  '(warning-suppress-log-types '((comp))))
 
 (add-to-list 'load-path "~/.emacs.d/lisp")
-(mapc 'require '(password-store powershell groovy-mode))
+(mapc 'require '(powershell groovy-mode))
 
 (defcustom file-mode-list nil "ASSOC list of filenames and modes")
 (defun add-to-auto-mode (element)
