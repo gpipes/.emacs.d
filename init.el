@@ -13,10 +13,10 @@
  '(global-display-fill-column-indicator-mode 1)
  '(global-font-lock-mode nil)
  '(ido-show-dot-for-dired t)
- '(python-shell-interpreter "python")
  '(org-agenda-files '("~/notes/log.org"))
  '(org-log-done 'note)
  '(org-log-note-clock-out t)
+ '(python-shell-interpreter "python")
  '(tab-width 4)
  '(tramp-remote-path '(tramp-own-remote-path))
  '(tramp-sh-extra-args nil)
@@ -45,6 +45,5 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:height 180 :family "Ubuntu Mono")))))
 
-(load-theme 'mint-chocolate t)
 (provide 'init)
 ;;; init.el ends here

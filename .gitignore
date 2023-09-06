@@ -26,3 +26,4 @@ projects
 eln-cache/
 *.tex
 *.pdf
+org-persist/
