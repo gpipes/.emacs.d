@@ -7,14 +7,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(allow-func-list '(narrow-to-region))
- '(epg-pinentry-mode 'loopback)
  '(file-mode-list '(("Jenkinsfile\\'" . groovy-mode)))
- '(fill-column 75)
- '(global-display-fill-column-indicator-mode 1)
  '(global-font-lock-mode nil)
- '(ido-show-dot-for-dired t)
- '(org-agenda-files '("~/notes/log.org"))
- '(org-log-done 'note)
  '(org-log-note-clock-out t)
  '(python-shell-interpreter "python")
  '(read-buffer-completion-ignore-case t)
@@ -23,9 +17,6 @@
  '(tramp-sh-extra-args nil)
  '(view-read-only t)
  '(warning-suppress-log-types '((comp))))
-
-(add-to-list 'load-path "~/.emacs.d/lisp")
-(mapc 'require '(powershell groovy-mode))
 
 (defcustom file-mode-list nil "ASSOC list of filenames and modes")
 (defun add-to-auto-mode (element)
