@@ -7,7 +7,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(allow-func-list '(narrow-to-region))
- '(file-mode-list '(("Jenkinsfile\\'" . groovy-mode)))
  '(global-font-lock-mode nil)
  '(org-log-note-clock-out t)
  '(python-shell-interpreter "python")
